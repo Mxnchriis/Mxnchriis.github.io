@@ -1,0 +1,25 @@
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import './index.css'
+import App from './App.jsx'
+import Header from './Header.jsx'
+import Accueil from './Accueil.jsx'
+import Projets from './Projects.jsx'
+import Contact from './Contact.jsx'
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Accueil />} />
+        <Route path="/projets" element={<Projets />} />
+        <Route path="/contact" element={<Contact />} />
+        {/* Optionnel : page d'accueil par défaut */}
+        <Route path="*" element={<Accueil />} />
+      </Routes>
+      <App/>
+    </BrowserRouter>
+  </StrictMode>,
+)
