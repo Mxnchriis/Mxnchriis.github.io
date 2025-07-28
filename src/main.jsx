@@ -10,7 +10,7 @@ import Contact from './Contact.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename='/'>
       <Header />
       <Routes>
         <Route path="/" element={<Accueil />} />
