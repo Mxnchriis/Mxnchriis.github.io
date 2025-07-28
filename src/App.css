@@ -6,8 +6,10 @@
 }
 
 .accueil, .contact, .projets {
-  padding: 3rem;
-  padding-top: 10rem;
+  padding: 2rem 1rem;
+  padding-top: 7rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .app{
@@ -19,22 +21,22 @@
 
 }
 
+/* Image principale responsive */
 .image-wrapper {
   position: relative;
-  width: 750px;
-  height: 300px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
   margin: 1rem auto;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 8px;
+  aspect-ratio: 5/2; /* pour garder le ratio même sur mobile */
 }
 
 .blur-background {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Altja_j%C3%B5gi_Lahemaal.jpg/1200px-Altja_j%C3%B5gi_Lahemaal.jpg");
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url('./assets/img/selfie.jpg');
   background-size: cover;
   background-position: center;
   filter: blur(10px);
@@ -43,12 +45,15 @@
 
 .mainimg {
   position: relative;
-  width: 750px;
-  height: 300px;
-  border-radius: 2px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  object-fit: scale-down;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
   z-index: 2;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin: 0 auto;
+  display: block;
 }
 
 hr {
@@ -76,6 +81,26 @@ li{
   list-style: none;
 }
 
+/* Carrousel responsive */
+.carrousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.carrousel img {
+  width: 70px;
+  height: 70px;
+}
+
+.carrousel button {
+  font-size: 1.5rem;
+  padding: 0.3em 0.7em;
+}
+
 .accordion-title {
   width: "100%";
   text-align: "center";
@@ -91,6 +116,12 @@ li{
 .accordion-content {
   padding: "10px 20px";
   background: "#242424"
+}
+
+/* Accordion responsive */
+.accordion-title {
+  font-size: 1.1em;
+  padding: 0.7em 0.5em;
 }
 
 .logo {
@@ -127,4 +158,27 @@ li{
 
 .read-the-docs {
   color: #888;
+}
+
+@media (max-width: 600px) {
+  .accueil, .contact, .projets {
+    padding: 1rem 0.2rem;
+    padding-top: 5rem;
+  }
+  .mainimg, .image-wrapper {
+    max-width: 98vw;
+    min-width: 0;
+    border-radius: 4px;
+  }
+  .carrousel img {
+    width: 45px;
+    height: 45px;
+  }
+  .carrousel button {
+    font-size: 1.2rem;
+    padding: 0.2em 0.5em;
+  }
+  .accordion-content {
+    padding: 8px 5px;
+  }
 }
