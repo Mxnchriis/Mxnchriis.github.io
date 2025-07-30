@@ -1,4 +1,4 @@
-import './App.css'; 
+import './Body.css'; 
 import React, { useState, useEffect } from 'react';
 import screengame2 from './assets/img/Screengame(2).png';
 import screengame3 from './assets/img/Screengame(3).png';
@@ -27,15 +27,16 @@ const FigmaPrototype = () => {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div style={{ position: 'relative', paddingTop: '56.25%' }}>
+    <div style={{ position: 'relative', paddingTop: '100%' }}>
       {!loaded && <div className="placeholder">Chargement du prototype...</div>}
       <iframe
         title="Prototype Figma"
         onLoad={() => setLoaded(true)}
+        className='figma-embed'
         style={{
           position: 'absolute',
           top: 0,
-          left: "36.5%",
+          left: "25%",
           width: '400px',
           height: '100%',
           border: 'none',
@@ -53,7 +54,9 @@ function Projets() {
   return (
     <div className="projets">
       <h1>Mes Projets</h1>
-      <img src="https://www.univ-smb.fr/espace-etudiant/wp-content/uploads/sites/81/2022/09/projet-etudiant.jpg" alt=""/>
+      <div className="image-wrapper">
+      <img src="https://www.univ-smb.fr/espace-etudiant/wp-content/uploads/sites/81/2022/09/projet-etudiant.jpg" alt="" className='mainimg'/>
+      </div>
       <p>Quelques-uns de mes projets récents :</p>
       <ul>
         <Accordion title="Projet Angular">
@@ -71,8 +74,10 @@ function Projets() {
 
         <Accordion title="Projet Gaming">
         <h2>Cat'N Dog</h2>
-        <img src= {screengame2} alt="Cat'N Dog screen1" className='screengame'/>
-        <img src={screengame3} alt="Cat'N Dog screen2" className='screengame'/>
+        <div className="boximg">
+          <img src= {screengame2} alt="Cat'N Dog screen1" className='screengame'/>
+          <img src={screengame3} alt="Cat'N Dog screen2" className='screengame'/>
+        </div>
         <p>Cat'N Dog est un jeu de fight-platformer où les joueurs incarnent un chat et un chien dans un univers coloré et dynamique.
           Le but du jeu est de voler la croquette adverse, pour cela vous devez éliminer votre adversaire pour débloquer l'accès au différente zone donnant accès à la croquette.
           Le jeu propose des combats en arène avec des mécaniques de plateforme, permettant aux joueurs de sauter, courir et combattre dans des environnements variés.</p>

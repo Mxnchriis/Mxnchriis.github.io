@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './App.css'; 
+import './Body.css'; 
 import htmlLogo from './assets/html.png';
 import cssLogo from './assets/css.png';
 import jsLogo from './assets/js.png';
@@ -48,24 +48,26 @@ function Carrousel() {
 
   return (
     <div className="carrousel">
-      <button onClick={prev}>&lt;</button>
-      <img
-        src={langImages[(index - 1 + langImages.length) % langImages.length].src}
-        alt={langImages[(index - 1 + langImages.length) % langImages.length].alt}
-        style={{ width: 100, height: 100, objectFit: 'contain', margin: '0 20px' }}
-      />
-      <img
-        src={langImages[index].src}
-        alt={langImages[index].alt}
-        className='logo'
-        style={{ width: 100, height: 100, objectFit: 'contain', margin: '0 20px' }}
-      />
-      <img
-        src={langImages[(index + 1) % langImages.length].src}
-        alt={langImages[(index + 1) % langImages.length].alt}
-        style={{ width: 100, height: 100, objectFit: 'contain', margin: '0 20px' }}
-      />
-      <button onClick={next}>&gt;</button>
+      <div className="carrousel-bloc">
+        <button onClick={prev}>&lt;</button>
+        <img
+          src={langImages[(index - 1 + langImages.length) % langImages.length].src}
+          alt={langImages[(index - 1 + langImages.length) % langImages.length].alt}
+          style={{ width: 100, height: 100, objectFit: 'contain', margin: '0 20px' }}
+        />
+        <img
+          src={langImages[index].src}
+          alt={langImages[index].alt}
+          className='logo'
+          style={{ width: 100, height: 100, objectFit: 'contain', margin: '0 20px' }}
+        />
+        <img
+          src={langImages[(index + 1) % langImages.length].src}
+          alt={langImages[(index + 1) % langImages.length].alt}
+          style={{ width: 100, height: 100, objectFit: 'contain', margin: '0 20px' }}
+        />
+        <button onClick={next}>&gt;</button>
+      </div>
       <div style={{ marginTop: 10 }}>{langImages[index].alt}</div>
     </div>
   );
@@ -84,7 +86,7 @@ function Accueil() {
         <img
           src={selfie}
           alt=""
-          className="mainimg"
+          id='mainimg'
           style={{ cursor: "pointer" }}
           onClick={() => setModalOpen(true)}
         />

@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ReactDOM from 'react-dom/client';
 import './index.css'
-import App from './App.jsx'
+import Footer from './Footer.jsx'
 import Header from './Header.jsx'
 import Accueil from './Accueil.jsx'
 import Projets from './Projects.jsx'
@@ -20,7 +20,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         {/* Optionnel : page d'accueil par défaut */}
         <Route path="*" element={<Accueil />} />
       </Routes>
-      <App/>
+      <Footer/>
     </BrowserRouter>
   </StrictMode>,
 )

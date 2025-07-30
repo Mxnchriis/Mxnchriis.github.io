@@ -1,10 +1,12 @@
-import './App.css'; 
+import './Body.css'; 
 
 function Contact() {
     return (
         <div className="contact">
             <h1>Contact</h1>
-            <img src="https://www.univ-smb.fr/scem/wp-content/uploads/sites/82/2022/03/contact-750x300.jpg" alt=""/>
+            <div className="image-wrapper">
+                <img src="https://www.univ-smb.fr/scem/wp-content/uploads/sites/82/2022/03/contact-750x300.jpg" alt="" className='mainimg'/>
+            </div>
             <p>Nom/prénom: AGOT Manchris</p>
             <p>Âge: 21 ans</p>
             <p>Cursus: MBA Développeur Full Stack</p>
