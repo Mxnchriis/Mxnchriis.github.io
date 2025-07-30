@@ -34,12 +34,6 @@ const FigmaPrototype = () => {
         onLoad={() => setLoaded(true)}
         className='figma-embed'
         style={{
-          position: 'absolute',
-          top: 0,
-          left: "25%",
-          width: '400px',
-          height: '100%',
-          border: 'none',
           display: loaded ? 'block' : 'none',
         }}
         src="https://embed.figma.com/proto/LoHy5usBRI598X3Cg9i2JE/UI-UX-Gaspiypa?node-id=2-89&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A89&embed-host=share"

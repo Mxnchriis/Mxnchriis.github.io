@@ -6,18 +6,30 @@
 }
 
 .accueil, .contact, .projets {
+  display: flex;
+  flex-direction: column;
   padding: 2rem 1rem;
   padding-top: 7rem;
-  max-width: 900px;
+  max-width: 90%;
   margin: 0 auto;
 }
 
+li {
+  list-style: none;
+}
+
+hr {
+  width: 15%;
+  margin: 2rem auto;
+  border: none;
+  border-top: 1px solid #ccc;
+}
 
 /* Image principale responsive */
 .image-wrapper {
   position: relative;
   width: 100%;
-  max-width: 750px;
+  max-width: 75%;
   height: auto;
   margin: 1rem auto;
   overflow: hidden;
@@ -57,13 +69,6 @@
   display: block;
 }
 
-hr {
-  width: 15%;
-  margin: 2rem auto;
-  border: none;
-  border-top: 1px solid #ccc;
-}
-
 .boximg {
   display: flex;
   flex-direction: row;
@@ -72,7 +77,7 @@ hr {
 }
 
 .screengame{
-  width: 100%;
+  /* width: 100%; */
   max-width: 500px;
   height: auto;
   margin: 1rem;
@@ -83,10 +88,6 @@ hr {
 iframe {
   border-radius: 16px;
   overflow: hidden;
-}
-
-li{
-  list-style: none;
 }
 
 /* Carrousel responsive */
@@ -153,6 +154,15 @@ li{
   padding: 0.7em 0.5em;
 }
 
+.figma-embed {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 400px;
+  height: 100%;
+  border: none;
+}
+
 
 @keyframes logo-spin {
   from {
@@ -179,9 +189,11 @@ li{
 
 @media (max-width: 600px) {
   .accueil, .contact, .projets {
-    padding: 1rem;
-    padding-top: 5rem;
-    margin: 0;
+    padding-top: 10rem;
+  }
+
+  li {
+    list-style: none;
   }
   .mainimg, .image-wrapper {
     max-width: 98vw;
@@ -202,9 +214,19 @@ li{
     padding: 8px 5px;
   }
   .figma-embed {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
   }
+
+.boximg {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
 }
