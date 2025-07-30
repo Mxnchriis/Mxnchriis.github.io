@@ -14,6 +14,14 @@
   margin: 0 auto;
 }
 
+ul {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 li {
   list-style: none;
 }
@@ -33,6 +41,7 @@ hr {
   height: auto;
   margin: 1rem auto;
   overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   object-fit: cover;
   border-radius: 8px;
   aspect-ratio: 5/2; /* pour garder le ratio même sur mobile */
@@ -53,7 +62,6 @@ hr {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   margin: 0 auto;
   display: block;
 }
@@ -64,7 +72,6 @@ hr {
   height: 100%;
   object-fit: scale-down;
   z-index: 2;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
   margin: 0 auto;
   display: block;
 }
@@ -195,13 +202,13 @@ iframe {
   }
 
   .carrousel-bloc img {
-    width: 45px;
-    height: 45px;
+    width: 60px;
+    height: 60px;
     margin: 0 5px;
   }
 
   .mainlogo {
-    width: 60px;
+    width: 70px;
     padding-bottom: 3em;
   }
 
