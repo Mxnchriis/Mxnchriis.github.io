@@ -2,7 +2,59 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 3rem;
   padding: 2rem;
   background-color: #1d1d1d;
 
+}
+
+.logo {
+  width: 110px;
+  padding: 0 1rem;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .footlink {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .logo {
+    width: 80px;
+  }
+
+  h2 {
+    font-size: 1em;
+    text-align: center;
+  }
 }

@@ -96,6 +96,8 @@ iframe {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin: 3rem;
+  margin-bottom: 0;
 }
 
 .carrousel-bloc {
@@ -104,12 +106,13 @@ iframe {
   justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 1rem;
 }
 
 .carrousel-bloc img {
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin: 0 20px;
 }
 
 .carrousel-bloc button {
@@ -130,16 +133,16 @@ iframe {
   border-bottom: "1px solid #ccc";
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
+.mainlogo {
+  width: 110px;
+  padding-bottom: 5em;
   will-change: filter;
   transition: filter 300ms;
 }
-.logo:hover {
+.mainlogo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
-.logo.react:hover {
+.mainlogo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
@@ -161,22 +164,6 @@ iframe {
   width: 400px;
   height: 100%;
   border: none;
-}
-
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
 }
 
 .card {
@@ -202,12 +189,24 @@ iframe {
     object-fit: cover;
     object-position: center;
   }
-  .carrousel img {
+
+  .carrousel-bloc {
+    flex-direction: row;
+  }
+
+  .carrousel-bloc img {
     width: 45px;
     height: 45px;
+    margin: 0 5px;
   }
-  .carrousel button {
-    font-size: 1.2rem;
+
+  .mainlogo {
+    width: 60px;
+    padding-bottom: 3em;
+  }
+
+  .carrousel-bloc button {
+    font-size: 0.5rem;
     padding: 0.2em 0.5em;
   }
   .accordion-content {

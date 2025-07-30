@@ -53,18 +53,15 @@ function Carrousel() {
         <img
           src={langImages[(index - 1 + langImages.length) % langImages.length].src}
           alt={langImages[(index - 1 + langImages.length) % langImages.length].alt}
-          style={{ width: 100, height: 100, objectFit: 'contain', margin: '0 20px' }}
         />
         <img
           src={langImages[index].src}
           alt={langImages[index].alt}
-          className='logo'
-          style={{ width: 100, height: 100, objectFit: 'contain', margin: '0 20px' }}
+          className='mainlogo'
         />
         <img
           src={langImages[(index + 1) % langImages.length].src}
           alt={langImages[(index + 1) % langImages.length].alt}
-          style={{ width: 100, height: 100, objectFit: 'contain', margin: '0 20px' }}
         />
         <button onClick={next}>&gt;</button>
       </div>

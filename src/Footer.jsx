@@ -9,12 +9,14 @@ function Footer() {
   return (
     <>
       <div className='footer'>
+        <div className="footlink">
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
+        </div>
       <h2>Ce portfolio tourne sur Vite + React</h2>
       </div>
       {/* <div className="card">
