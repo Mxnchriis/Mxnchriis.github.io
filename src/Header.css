@@ -27,7 +27,7 @@
 }
 .headertxt h2 {
     font-size: 1em;
-    margin: 0.2em 0;
+    margin: 0.2em 1rem;
 }
 
 .navbar {
@@ -73,6 +73,9 @@
         width: 98%;
         font-size: 0.9em;
         padding: 0.5rem 0.2rem;
+    }
+    .headertxt h2 {
+        margin: 0.2em 0;
     }
     .navbar {
         font-size: 1rem;

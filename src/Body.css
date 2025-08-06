@@ -167,7 +167,8 @@ iframe {
 .figma-embed {
   position: absolute;
   top: 0;
-  left: 25%;
+  left: 50%;
+  transform: translateX(-50%);
   width: 400px;
   height: 100%;
   border: none;
@@ -235,4 +236,26 @@ iframe {
   gap: 1rem;
 }
 
+}
+
+.defilement-lisse {
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.defilement-lisse .contenu {
+  display: inline-block;
+  padding-left: 100%;
+  color: white;
+  animation: defilement-infini 4s linear infinite;
+}
+
+@keyframes defilement-infini {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }
