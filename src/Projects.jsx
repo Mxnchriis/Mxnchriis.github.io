@@ -14,12 +14,29 @@ function Accordion({ title, children }) {
       >
         {title} {open ? "▲" : "▼"}
       </button>
-      {open && (
-        <div className="accordion-content" style={{ padding: "10px 20px", background: "#242424" }}>
+        <div className={`accordion-content${open ? "" : " closed"}`}>
           {children}
         </div>
-      )}
     </div>
+  );
+}
+
+function ColorPicker(){
+  const [color, setColor] = useState('#000000');
+
+  const handleColorChange = (event) => {
+    setColor(event.target.value);
+  };
+  return (
+    <>
+    <div className="color-picker-container">
+      <div className="color-display" onClick={() => navigator.clipboard.writeText(color)} style={{ backgroundColor: color }}>
+        {color}
+      </div>
+      <label >Choisissez une couleur :</label>
+      <input type='color' value={color} onChange={handleColorChange} />
+    </div>
+    </>
   );
 }
 
@@ -39,7 +56,7 @@ const FigmaPrototype = () => {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div style={{ position: 'relative', paddingTop: '60%' }}>
+    <div className="figma-container">
       {!loaded && <div className="placeholder">Chargement du prototype...</div>}
       <iframe
         title="Prototype Figma"
@@ -65,6 +82,12 @@ function Projets() {
       </div>
       <p>Quelques-uns de mes projets récents :</p>
       <ul>
+        <Accordion title="Projet React">
+          <h2>Color Picker</h2>
+          <ColorPicker />
+          <p>Un sélecteur de couleur simple qui permet à l'utilisateur de choisir une couleur, l'afficher puis la copier dans son presse-papier.</p>
+        </Accordion>
+        
         <Accordion title="Projet Angular">
           {/* <li>En cours...</li> */}
           <Placeholder />
