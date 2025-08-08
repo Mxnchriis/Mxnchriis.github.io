@@ -197,6 +197,26 @@ iframe {
   color: #888;
 }
 
+.mpm-text {
+  font-family: monospace;
+  font-size: 1.1em;
+  background: #f8f8f8;
+  color: black;
+  padding: 0.7em;
+  border-radius: 6px;
+  margin-bottom: 0.5em;
+  word-break: break-word;
+}
+.mpm-text .correct {
+  color: #2ecc40;
+  background: none;
+}
+.mpm-text .incorrect {
+  color: #e74c3c;
+  background: none;
+  text-decoration: underline;
+}
+
 .color-picker-container {
   display: flex;
   flex-direction: column;
@@ -210,7 +230,6 @@ iframe {
   border: 1px solid hsla(0, 0%, 0%, 0.164);
   cursor: pointer;
 }
-
 
 .color-display {
   position: relative;

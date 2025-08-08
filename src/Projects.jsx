@@ -22,52 +22,112 @@ function Accordion({ title, children }) {
 }
 
 function MPMtest() {
-  const [text, setText] = useState('');
-  const [time, setTime] = useState(0);
-  const [isRunning, setIsRunning] = useState(false);
+  const testText = "Le chat bondit agilement sur la rambarde, défiant la gravité comme si le vide n'existait pas. Le vent du soir caressait les toits pendant que la lune, silencieuse, éclairait la scène d'un halo argenté. A quelques mètres, un chien le regardait fixement, prêt à défendre ses précieuses croquettes. Le duel était inévitable.";
+  const [input, setInput] = useState('');
   const [startTime, setStartTime] = useState(null);
-  const [wpm, setWpm] = useState(0);
+  const [endTime, setEndTime] = useState(null);
+  const [isRunning, setIsRunning] = useState(false);
+  const [errors, setErrors] = useState(0);
+  const [finished, setFinished] = useState(false);
 
+  // Calcul du temps réel
+  useEffect(() => {
+    if (isRunning && !finished && input.length > 0 && input.length <= testText.length) {
+      if (input === testText) {
+        setEndTime(Date.now());
+        setIsRunning(false);
+        setFinished(true);
+      }
+    }
+  }, [input, isRunning, finished, testText]);
+
+  // Calcul des erreurs à chaque frappe
+  useEffect(() => {
+    let err = 0;
+    for (let i = 0; i < input.length; i++) {
+      if (input[i] !== testText[i]) err++;
+    }
+    setErrors(err);
+  }, [input, testText]);
+
+  // Démarrage du test au premier caractère
   const handleChange = (e) => {
-    setText(e.target.value);
-    if (!isRunning) {
-      setIsRunning(true);
+    if (!isRunning && e.target.value.length === 1) {
       setStartTime(Date.now());
+      setIsRunning(true);
+      setFinished(false);
+      setEndTime(null);
+      setErrors(0);
     }
-    if (e.target.value.length > 0) {
-      const elapsedTime = (Date.now() - startTime) / 60000; // Convert milliseconds to minutes
-      const wordsTyped = e.target.value.trim().split(/\s+/).length;
-      setWpm(Math.round(wordsTyped / elapsedTime));
-    }
+    setInput(e.target.value);
   };
-  const handleReset = () => {
-    setText('');
-    setTime(0);
-    setIsRunning(false);
-    setStartTime(null);
-    setWpm(0);
+
+  // Calcul du temps écoulé
+  const elapsed = isRunning
+    ? ((Date.now() - startTime) / 1000).toFixed(2)
+    : finished && endTime && startTime
+    ? ((endTime - startTime) / 1000).toFixed(2)
+    : 0;
+
+  // Calcul du MPM (mots par minute)
+  const wordsTyped = input.trim().split(/\s+/).length;
+  const mpm = finished && startTime && endTime
+    ? Math.round(wordsTyped / (((endTime - startTime) / 1000) / 60))
+    : isRunning && startTime
+    ? Math.round(wordsTyped / (((Date.now() - startTime) / 1000) / 60))
+    : 0;
+
+  // Affichage du texte avec indication des fautes
+  function renderTestText() {
+    return (
+      <div className="mpm-text">
+        {testText.split('').map((char, idx) => {
+          let className = '';
+          if (input[idx] === undefined) className = '';
+          else if (input[idx] === char) className = 'correct';
+          else{
+            className = 'incorrect';
+          }
+          return (
+            <span key={idx} className={className}>{char}</span>
+          );
+        })}
+      </div>
+    );
   }
+
+  const handleReset = () => {
+    setInput('');
+    setStartTime(null);
+    setEndTime(null);
+    setIsRunning(false);
+    setFinished(false);
+    setErrors(0);
+  };
+
   return (
-    <>
     <div className="mpm-test">
-      <p>Le chat bondit agilement sur la rambarde, défiant la gravité comme si le vide n’existait pas. Le vent du soir caressait les toits pendant que la lune, silencieuse, éclairait la scène d’un halo argenté. À quelques mètres, un chien le regardait fixement, prêt à défendre ses précieuses croquettes. Le duel était inévitable.</p>
+      <h3>Recopier le texte ci-dessous le plus vite possible :</h3>
+      {renderTestText()}
       <textarea
-        value={text}
+        value={input}
         onChange={handleChange}
+        disabled={finished}
         placeholder="Tapez ici..."
         rows="5"
         cols="50"
+        style={{ marginTop: "1em", fontSize: "1.1em", width: "100%" }}
       />
-    </div>
       <div className="mpm-controls">
         <button onClick={handleReset}>Réinitialiser</button>
-        <p>MPM: {wpm}</p>
-      <div className="mpm-info">
-        <p>Temps écoulé : {isRunning ? ((Date.now() - startTime) / 1000).toFixed(2) : 0} secondes</p>
-        <p>Nombre de mots : {text.trim().split(/\s+/).length}</p>
+        <p>MPM : {mpm}</p>
+        <div className="mpm-info">
+          <p>Temps écoulé : {elapsed} secondes</p>
+          <p>Erreurs : {errors}</p>
+          <p>{finished ? "Test terminé !" : "Test en cours..."}</p>
+        </div>
       </div>
     </div>
-    </>
   );
 }
 
@@ -150,7 +210,7 @@ function Projets() {
         <Accordion title="Projet React 1">
           <h2>Test de Mots par Minute (MPM)</h2>
           <MPMtest />
-          <p>Un projet de test de mot par minute, il permet de tester la vitesse de frappe d'un utilisateur en lui demandant de taper un texte aléatoire.</p>
+          <p>Un projet de test de mot par minute, il permet de tester la vitesse de frappe d'un utilisateur en lui demandant de taper un texte prédéfini.</p>
         </Accordion>
         <Accordion title="Projet React 2">
           <h2>Color Picker</h2>
@@ -185,7 +245,7 @@ function Projets() {
           <p>Télécharger la démo : (Pas encore disponible)</p>
         </Accordion>
 
-        <p>Voici également quelques sites web sur lequel j'ai pu travaillé :</p>
+        <p>Voici également quelques sites web sur lesquel j'ai pu travaillé :</p>
         <li><a href="http://icea-edu.fr">icea-edu.fr</a></li>
         <li><a href="https://www.nasdy.fr/">nasdy.fr</a></li>
         <li><a href="https://akaya.odoo.com/">akaya.odoo.com</a></li>
