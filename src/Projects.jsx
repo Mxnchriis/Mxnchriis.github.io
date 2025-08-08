@@ -21,22 +21,87 @@ function Accordion({ title, children }) {
   );
 }
 
+function MPMtest() {
+  const [text, setText] = useState('');
+  const [time, setTime] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
+  const [startTime, setStartTime] = useState(null);
+  const [wpm, setWpm] = useState(0);
+
+  const handleChange = (e) => {
+    setText(e.target.value);
+    if (!isRunning) {
+      setIsRunning(true);
+      setStartTime(Date.now());
+    }
+    if (e.target.value.length > 0) {
+      const elapsedTime = (Date.now() - startTime) / 60000; // Convert milliseconds to minutes
+      const wordsTyped = e.target.value.trim().split(/\s+/).length;
+      setWpm(Math.round(wordsTyped / elapsedTime));
+    }
+  };
+  const handleReset = () => {
+    setText('');
+    setTime(0);
+    setIsRunning(false);
+    setStartTime(null);
+    setWpm(0);
+  }
+  return (
+    <>
+    <div className="mpm-test">
+      <p>Le chat bondit agilement sur la rambarde, défiant la gravité comme si le vide n’existait pas. Le vent du soir caressait les toits pendant que la lune, silencieuse, éclairait la scène d’un halo argenté. À quelques mètres, un chien le regardait fixement, prêt à défendre ses précieuses croquettes. Le duel était inévitable.</p>
+      <textarea
+        value={text}
+        onChange={handleChange}
+        placeholder="Tapez ici..."
+        rows="5"
+        cols="50"
+      />
+    </div>
+      <div className="mpm-controls">
+        <button onClick={handleReset}>Réinitialiser</button>
+        <p>MPM: {wpm}</p>
+      <div className="mpm-info">
+        <p>Temps écoulé : {isRunning ? ((Date.now() - startTime) / 1000).toFixed(2) : 0} secondes</p>
+        <p>Nombre de mots : {text.trim().split(/\s+/).length}</p>
+      </div>
+    </div>
+    </>
+  );
+}
+
 function ColorPicker(){
   const [color, setColor] = useState('#000000');
+
+  function getTextColor(bgColor) {
+    const hex = bgColor.replace('#', '');
+    const r = parseInt(hex.substring(0,2), 16);
+    const g = parseInt(hex.substring(2,4), 16);
+    const b = parseInt(hex.substring(4,6), 16);
+    const luminance = (0.299*r + 0.587*g + 0.114*b);
+    return luminance > 150 ? '#222' : '#fff';
+  }
 
   const handleColorChange = (event) => {
     setColor(event.target.value);
   };
+
   return (
-    <>
     <div className="color-picker-container">
-      <div className="color-display" onClick={() => navigator.clipboard.writeText(color)} style={{ backgroundColor: color }}>
+      <div
+        className="color-display"
+        onClick={() => navigator.clipboard.writeText(color)}
+        style={{
+          backgroundColor: color,
+          color: getTextColor(color)
+        }}
+      >
         {color}
       </div>
-      <label >Choisissez une couleur :</label>
+      <label>Choisissez une couleur :</label>
       <input type='color' value={color} onChange={handleColorChange} />
     </div>
-    </>
   );
 }
 
@@ -82,7 +147,12 @@ function Projets() {
       </div>
       <p>Quelques-uns de mes projets récents :</p>
       <ul>
-        <Accordion title="Projet React">
+        <Accordion title="Projet React 1">
+          <h2>Test de Mots par Minute (MPM)</h2>
+          <MPMtest />
+          <p>Un projet de test de mot par minute, il permet de tester la vitesse de frappe d'un utilisateur en lui demandant de taper un texte aléatoire.</p>
+        </Accordion>
+        <Accordion title="Projet React 2">
           <h2>Color Picker</h2>
           <ColorPicker />
           <p>Un sélecteur de couleur simple qui permet à l'utilisateur de choisir une couleur, l'afficher puis la copier dans son presse-papier.</p>

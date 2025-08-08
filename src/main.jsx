@@ -9,6 +9,12 @@ import Accueil from './Accueil.jsx'
 import Projets from './Projects.jsx'
 import Contact from './Contact.jsx'
 
+if (sessionStorage.redirect) {
+  const redirect = sessionStorage.redirect;
+  delete sessionStorage.redirect;
+  window.history.replaceState(null, '', redirect);
+}
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter basename='/'>
