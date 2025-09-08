@@ -14,7 +14,7 @@ function Contact() {
             <p>Localisation: Montpellier, 34080</p>
             <a href="https://www.linkedin.com/in/manchris-a-144b79272/">LinkedIn</a>
             <p>
-                Vous pouvez me contacter par email à <a href="mailto:manchrisagot@gmail.com">manchrisagot@gmail.com</a> ou par téléphone au <a href="tel:+596696374895">0696 37 48 95</a>.
+                Vous pouvez me contacter par email à <a href="mailto:manchrisagot@gmail.com">manchrisagot@gmail.com</a> ou par téléphone au <a href="tel:+33743607709">07 43 60 77 09</a>.
             </p>
         </div>
     );
