@@ -1,35 +1,58 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import linkedinLogo from './assets/contact/linkedin.png'
+import githubLogo from './assets/contact/github.png'
+import adresseLogo from './assets/contact/adresse.png'
+import mobileLogo from './assets/contact/mobile.png'
+import emailLogo from './assets/contact/email.png'
+import programmingLogo from './assets/img/programmation.png'
 import './Footer.css'
+import { Link } from 'react-router-dom';
 
 function Footer() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <div className='footer'>
-        <div className="footlink">
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="footer">
+        <div className="footer-title">
+          <img src={programmingLogo} alt="GitHub Logo" className="github-logo" />
+          <h1>AGOT Manchris</h1>
+          <h2>Développeur Full-Stack en recherche d'alternance</h2>
         </div>
-      <h2>Ce portfolio tourne sur Vite + React</h2>
+
+        <nav>
+            <Link to="/">Accueil</Link>
+            <Link to="/projets">Projets</Link>
+            <Link to="/contact">Contact</Link>
+        </nav>
+
+        <div className="adresse">
+          <img src= {adresseLogo} alt="localisationLogo" />
+          <h3>Le Crès 34920, France</h3>
+        </div>
+
+        <div className="footer-links">
+        <a href="https://www.linkedin.com/in/manchris-a-144b79272/"><img src= {linkedinLogo} alt="LinkedIn Logo" className="linkedin-logo" /></a>
+        <a href="https://github.com/Mxnchriis"><img src= {githubLogo} alt="" /></a>
+        <a href="mailto:manchrisagot@gmail.com"><img src={emailLogo} alt="" /></a>
+        <a href="tel:+33743607709"><img src={mobileLogo} alt="" /></a>
+        </div>
+
+        {/* <div className='footer-origin'>
+          <div className="footlink">
+          <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+          </a>
+          <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+          </a>
+          </div>
+          <h2>Ce portfolio tourne sur Vite + React</h2>
+          </div> */}
+          <h4>© 2025 AGOT Manchris. Tous droits réservés.</h4>
       </div>
-      {/* <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/Footer.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */}
     </>
   )
 }

@@ -1,12 +1,16 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Poppins, sans-serif; */
   width: 100%;
   /* line-height: 1.5;
   font-weight: 400; */
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: rgba(255, 255, 255, 0.952);
+  /* background-image: url("https://cdn.pixabay.com/video/2024/06/19/217392_tiny.jpg");
+  background-size: cover;
+  background-position: center; */
+  background-color: #000000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,11 +20,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: rgba(75, 171, 255, 0.416);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: rgba(75, 171, 255, 1);
 }
 
 body {
@@ -48,7 +52,7 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: rgba(75, 171, 255, 0.416);
 }
 button:focus,
 button:focus-visible {
@@ -61,7 +65,7 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: rgba(75, 171, 255, 1);
   }
   button {
     background-color: #f9f9f9;

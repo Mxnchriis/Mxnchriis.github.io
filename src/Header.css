@@ -1,46 +1,51 @@
 .header {
-    position: fixed;
     width: 100%;
     color: rgb(255, 255, 255);
     align-items: center;
-    z-index: 750;
-    top: 0;
-    left: 0;
 }
 
-.headertxt {
+.header-title {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #1d1d1d;
+    /* background-color: #1d1d1d; */
     height: fit-content;
     width: 100%;
     font-size: 0.7em;
     margin: 0 auto;
-    padding: 0 0.5rem;
     flex-wrap: wrap;
 }
 
-.headertxt h1 {
+.header-title h1 {
     font-size: 1.5em;
     margin: 0.2em 0;
 }
-.headertxt h2 {
+.header-title h2 {
     font-size: 1em;
     margin: 0.2em 1rem;
 }
 
 .navbar {
+    position: fixed;
+    z-index: 750;
+    left: 50%;
+    top: 1rem;
+    transform: translateX(-50%);
+
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
     color: white;
+
+    width: fit-content;
+    border-radius: 10px;
+
     background-color: rgba(75, 171, 255, 0.416);
     border: 1px solid rgba(75, 171, 255, 0.416);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
 }
 
 .navbar nav {
@@ -52,6 +57,7 @@
     color: white;
     padding: 0.5rem 1rem;
     text-decoration: none;
+    font-size: medium;
     border-radius: 4px;
     transition: background 0.2s;
 }
@@ -61,20 +67,29 @@
     color: #fff;
 }
 
+.navbar img {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
 /* Responsive styles */
 @media (max-width: 800px) {
     .header {
         height: auto;
         padding-bottom: 0.5rem;
     }
-    .headertxt {
+    .header-title {
         flex-direction: column;
         align-items: flex-start;
         width: 98%;
         font-size: 0.9em;
         padding: 0.5rem 0.2rem;
     }
-    .headertxt h2 {
+    .header-title h2 {
         margin: 0.2em 0;
     }
     .navbar {
@@ -87,10 +102,10 @@
 }
 
 @media (max-width: 500px) {
-    .headertxt h1 {
+    .header-title h1 {
         font-size: 1.1em;
     }
-    .headertxt h2 {
+    .header-title h2 {
         font-size: 0.8em;
     }
     .navbar {
