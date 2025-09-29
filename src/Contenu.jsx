@@ -119,7 +119,7 @@ function Carrousel() {
           onDragStart={preventDragHandler}
         />
       </div>
-      <div style={{ marginTop: 10 }}>{langImages[index].alt}</div>
+      <div style={{ marginTop: 10, color: 'white'}}>{langImages[index].alt}</div>
     </div>
   );
 }
@@ -130,7 +130,7 @@ function Accueil() {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="accueil">
+    <div className="Bloc-content">
       <h1>Qui suis-je ?</h1>
       <div className="image-wrapper">
         <div className="blur-background"></div>
@@ -178,7 +178,7 @@ function Accueil() {
         ainsi qu'une compréhension approfondie des technologies web.
       </p>
 
-      <div className="slide">
+      <div className="Bloc-content">
       <h2>Mes compétences</h2>
         <ul>
           <li>Développement front-end avec des framework</li>
@@ -191,7 +191,7 @@ function Accueil() {
 
       <hr/>
 
-      <div className="slide">
+      <div className="Bloc-content">
       <h2>Mes langages de programmation</h2>
         <ul>
           <li>HTML, CSS, JavaScript, Java</li>
@@ -204,7 +204,7 @@ function Accueil() {
 
        <hr/>
 
-      <div className="slide">
+      <div className="Bloc-content">
       <h2>Mes outils de développement</h2>
         <ul>
           <li>Visual Studio Code</li>
@@ -220,7 +220,7 @@ function Accueil() {
 
        <hr/>
 
-      <div className="slide">
+      <div className="Bloc-content">
       <h2>Mon parcours</h2>
         <p>
             J'ai commencé un parcours classique en passant par le lycée, où j'ai pu obtenir mon baccalauréat général 
@@ -232,14 +232,14 @@ function Accueil() {
 
        <hr/>
 
-      <div className="slide">
+      <div className="Bloc-content">
       <h2>Mon objectif</h2>
         <p>Je veux pouvoir créer ma propre entreprise de développement web et contribuer à des projets innovants qui améliorent l'expérience utilisateur.</p>
       </div>
 
        <hr/>
 
-      <div className="slide">
+      <div className="Bloc-content">
       <h2>Mes passions</h2>
         <p>En dehors du développement, je suis passionné par l'informatique en général, les jeux-vidéo, la musique et le sport. 
             J'aime apprendre de nouvelles choses et je suis un amoureux de la nature.</p>

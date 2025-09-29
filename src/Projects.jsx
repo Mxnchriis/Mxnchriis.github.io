@@ -200,57 +200,60 @@ const FigmaPrototype = () => {
 
 function Projets() {
   return (
-    <div className="projets">
-      <h1>Mes Projets</h1>
-      <div className="image-wrapper">
-      <img src="https://www.univ-smb.fr/espace-etudiant/wp-content/uploads/sites/81/2022/09/projet-etudiant.jpg" alt="" className='mainimg'/>
+    <section id="projets">
+      <div className="Bloc-content">
+        <h1>Mes</h1>
+        <h1 id='Colored'>Projets</h1>
+        <div className="image-wrapper">
+        <img src="https://www.univ-smb.fr/espace-etudiant/wp-content/uploads/sites/81/2022/09/projet-etudiant.jpg" alt="" className='mainimg'/>
+        </div>
+        <p>Quelques-uns de mes projets récents :</p>
+        <ul>
+          <Accordion title="Projet React 1">
+            <h2>Test de Mots par Minute (MPM)</h2>
+            <MPMtest />
+            <p>Un projet de test de mot par minute, il permet de tester la vitesse de frappe d'un utilisateur en lui demandant de taper un texte prédéfini.</p>
+          </Accordion>
+          <Accordion title="Projet React 2">
+            <h2>Color Picker</h2>
+            <ColorPicker />
+            <p>Un sélecteur de couleur simple qui permet à l'utilisateur de choisir une couleur, l'afficher puis la copier dans son presse-papier.</p>
+          </Accordion>
+          
+          <Accordion title="Projet Angular">
+            {/* <li>En cours...</li> */}
+            <Placeholder />
+          </Accordion>
+
+          <Accordion title="Projet UI/UX">
+            <h2>Gaspiypa</h2>
+            <FigmaPrototype />
+            <br />
+            <p>Gaspiypa est une application de gestion alimentaires. Elle permet aux utilisateurs de suivre et de réduire leur gaspillage alimentaire en fournissant des conseils personnalisés, des recettes et des statistiques sur leurs habitudes de consommation.</p>
+            <p>Le prototype interactif complet est disponible sur Figma. Vous pouvez l'explorer en cliquant sur le lien ci-dessous :</p>
+            <a href="https://www.figma.com/design/LoHy5usBRI598X3Cg9i2JE/UI-UX-Gaspiypa?node-id=2-89&t=Zu0LTVRSElo3BKhA-1" target="_blank" rel="noopener noreferrer">UI/UX Gaspiypa</a>
+          </Accordion>
+
+          <Accordion title="Projet Gaming">
+            <h2>Cat'N Dog</h2>
+            <div className="boximg">
+              <img src= {screengame2} alt="Cat'N Dog screen1" className='screengame'/>
+              <img src={screengame3} alt="Cat'N Dog screen2" className='screengame'/>
+            </div>
+            <p>Cat'N Dog est un jeu de fight-platformer où les joueurs incarnent un chat et un chien dans un univers coloré et dynamique.
+              Le but du jeu est de voler la croquette adverse, pour cela vous devez éliminer votre adversaire pour débloquer l'accès au différente zone donnant accès à la croquette.
+              Le jeu propose des combats en arène avec des mécaniques de plateforme, permettant aux joueurs de sauter, courir et combattre dans des environnements variés.</p>
+            <br />
+            <p>Télécharger la démo : (Pas encore disponible)</p>
+          </Accordion>
+
+          <p>Voici également quelques sites web sur lesquel j'ai pu travaillé :</p>
+          <li><a href="http://icea-edu.fr">icea-edu.fr</a></li>
+          <li><a href="https://www.nasdy.fr/">nasdy.fr</a></li>
+          <li><a href="https://akaya.odoo.com/">akaya.odoo.com</a></li>
+        </ul>
       </div>
-      <p>Quelques-uns de mes projets récents :</p>
-      <ul>
-        <Accordion title="Projet React 1">
-          <h2>Test de Mots par Minute (MPM)</h2>
-          <MPMtest />
-          <p>Un projet de test de mot par minute, il permet de tester la vitesse de frappe d'un utilisateur en lui demandant de taper un texte prédéfini.</p>
-        </Accordion>
-        <Accordion title="Projet React 2">
-          <h2>Color Picker</h2>
-          <ColorPicker />
-          <p>Un sélecteur de couleur simple qui permet à l'utilisateur de choisir une couleur, l'afficher puis la copier dans son presse-papier.</p>
-        </Accordion>
-        
-        <Accordion title="Projet Angular">
-          {/* <li>En cours...</li> */}
-          <Placeholder />
-        </Accordion>
-
-        <Accordion title="Projet UI/UX">
-          <h2>Gaspiypa</h2>
-          <FigmaPrototype />
-          <br />
-          <p>Gaspiypa est une application de gestion alimentaires. Elle permet aux utilisateurs de suivre et de réduire leur gaspillage alimentaire en fournissant des conseils personnalisés, des recettes et des statistiques sur leurs habitudes de consommation.</p>
-          <p>Le prototype interactif complet est disponible sur Figma. Vous pouvez l'explorer en cliquant sur le lien ci-dessous :</p>
-          <a href="https://www.figma.com/design/LoHy5usBRI598X3Cg9i2JE/UI-UX-Gaspiypa?node-id=2-89&t=Zu0LTVRSElo3BKhA-1" target="_blank" rel="noopener noreferrer">UI/UX Gaspiypa</a>
-        </Accordion>
-
-        <Accordion title="Projet Gaming">
-          <h2>Cat'N Dog</h2>
-          <div className="boximg">
-            <img src= {screengame2} alt="Cat'N Dog screen1" className='screengame'/>
-            <img src={screengame3} alt="Cat'N Dog screen2" className='screengame'/>
-          </div>
-          <p>Cat'N Dog est un jeu de fight-platformer où les joueurs incarnent un chat et un chien dans un univers coloré et dynamique.
-            Le but du jeu est de voler la croquette adverse, pour cela vous devez éliminer votre adversaire pour débloquer l'accès au différente zone donnant accès à la croquette.
-            Le jeu propose des combats en arène avec des mécaniques de plateforme, permettant aux joueurs de sauter, courir et combattre dans des environnements variés.</p>
-          <br />
-          <p>Télécharger la démo : (Pas encore disponible)</p>
-        </Accordion>
-
-        <p>Voici également quelques sites web sur lesquel j'ai pu travaillé :</p>
-        <li><a href="http://icea-edu.fr">icea-edu.fr</a></li>
-        <li><a href="https://www.nasdy.fr/">nasdy.fr</a></li>
-        <li><a href="https://akaya.odoo.com/">akaya.odoo.com</a></li>
-      </ul>
-    </div>
+    </section>
   );
 }
 

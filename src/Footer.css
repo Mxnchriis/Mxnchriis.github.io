@@ -14,7 +14,7 @@
   text-align: center;
   font-size: 1rem;
   margin-bottom: 1rem;
-  color: rgb(202, 202, 202);
+  color: #888888;
 }
 
 .adresse{
@@ -119,7 +119,7 @@ img {
 @media (max-width: 600px) {
   .footer {
     flex-direction: column;
-    padding: 1rem;
+    padding: 0;
     gap: 1rem;
   }
   
@@ -137,4 +137,8 @@ img {
     font-size: 1em;
     text-align: center;
   }
+}
+
+body.light-mode .footer{
+  background-color: rgb(234, 234, 234);
 }

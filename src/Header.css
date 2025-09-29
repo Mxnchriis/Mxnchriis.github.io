@@ -1,28 +1,6 @@
 .header {
     width: 100%;
-    color: rgb(255, 255, 255);
     align-items: center;
-}
-
-.header-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* background-color: #1d1d1d; */
-    height: fit-content;
-    width: 100%;
-    font-size: 0.7em;
-    margin: 0 auto;
-    flex-wrap: wrap;
-}
-
-.header-title h1 {
-    font-size: 1.5em;
-    margin: 0.2em 0;
-}
-.header-title h2 {
-    font-size: 1em;
-    margin: 0.2em 1rem;
 }
 
 .navbar {
@@ -38,7 +16,6 @@
 
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
-    color: white;
 
     width: fit-content;
     border-radius: 10px;
@@ -51,29 +28,77 @@
 .navbar nav {
     display: flex;
     gap: 1rem;
+    flex-direction: row;
 }
 
-.navbar a {
-    color: white;
+.navbar button {
     padding: 0.5rem 1rem;
     text-decoration: none;
     font-size: medium;
     border-radius: 4px;
+    background: none;
     transition: background 0.2s;
 }
-.navbar a:hover,
-.navbar a.active {
+.navbar button:hover,
+.navbar button.active {
     background: rgba(75, 171, 255, 0.7);
     color: #fff;
 }
 
-.navbar img {
-    width: 40px;
-    height: 40px;
+.toggle-icon {
+    width: 20px;
+    height: 20px;
     margin-right: 1rem;
     object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+    padding: 5px;
+    border: solid 0.1px #888888;
     border-radius: 50%;
-    border: 1px solid white;
+    background-color: white;
+}
+
+body.light-mode .toggle-icon {
+    border: solid 0.1px #555555;
+    background-color: #0c0f24;
+}
+
+/* Hamburger styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    z-index: 1001;
+}
+
+.hamburger span, .hamburger span:before, .hamburger span:after {
+    display: block;
+    background: white;
+    height: 4px;
+    width: 28px;
+    border-radius: 2px;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.hamburger span:before,
+.hamburger span:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hamburger span:before {
+    top: -9px;
+}
+.hamburger span:after {
+    top: 9px;
 }
 
 /* Responsive styles */
@@ -82,18 +107,9 @@
         height: auto;
         padding-bottom: 0.5rem;
     }
-    .header-title {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 98%;
-        font-size: 0.9em;
-        padding: 0.5rem 0.2rem;
-    }
-    .header-title h2 {
-        margin: 0.2em 0;
-    }
+
     .navbar {
-        font-size: 1rem;
+        font-size: 0.5rem;
         padding: 0.3rem 0.2rem;
     }
     .navbar nav {
@@ -110,18 +126,68 @@
     }
     .navbar {
         font-size: 0.95rem;
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row !important; /* Force horizontal */
+        align-items: center;
+        justify-content: center;
         padding: 0.2rem 0.1rem;
+        width: 100vw;
     }
     .navbar nav {
-        flex-direction: column;
-        gap: 0.2rem;
-        width: 98%;
+        flex-direction: row !important; /* Force horizontal */
+        gap: 0.5rem;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
     }
     .navbar a {
         padding: 0.4rem 0.6rem;
-        width: 98%;
-        display: block;
+        font-size: small;
+        width: auto;
+        display: inline-block;
+    }
+    /* Mobile: cache la navbar, affiche le hamburger */
+    .navbar {
+        display: none !important;
+    }
+    .navbar.open {
+        display: flex !important;
+        flex-direction: column !important;
+        position: fixed;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 70vw;
+        text-align: center;
+        /* margin: 0 auto; */
+        background: rgba(75, 171, 255, 0.701);
+        border: 5px solid rgba(132, 132, 132, 0.416);
+        border-radius: 15px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        z-index: 1000;
+        padding: 0;
+    }
+    .navbar nav {
+        flex-direction: column !important;
+        gap: 1rem;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .navbar btn {
+        font-size: 1rem;
+        padding: 0.6rem 0;
+        width: 100%;
+        background-color: rgba(69, 94, 116, 0.658);
+    }
+
+    .navbar img{
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex;
+        position: fixed;
+        top: 1rem;
+        right: 3rem;
     }
 }

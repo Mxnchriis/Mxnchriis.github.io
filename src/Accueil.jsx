@@ -7,17 +7,39 @@ import { useNavigate } from 'react-router-dom';
 function Accueil() {
   const [modalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
+  const [animate, setAnimate] = useState(false);
+
+  function scrollToSection(id) {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }
 
   return (
-    <div className="accueil-container">
-      <div className="accueil-content">
-        <img src={selfie} alt="" />
-        <h1>Bienvenue sur mon portfolio</h1>
-        <p>Découvrez mes projets et compétences en développement web.</p>
-        <button onClick={() => navigate("/contenu")}>Découvrir</button>
+    <section id="accueil">
+      <div className="accueil-container">
+        <div className="accueil-content">
+          <img src={selfie} alt="" />
+          <h1>
+            Bienvenue sur mon <span style={{ color: '#3399ff' }}>portfolio</span>
+          </h1>
+          <p>Découvrez mes projets et compétences en développement web.</p>
+          <button
+            className={animate ? "discover-btn animate" : "discover-btn"}
+            onClick={() => {
+              setAnimate(true);
+              setTimeout(() => {
+                scrollToSection("apropos");
+              }, 600); // durée de l'animation en ms
+            }}
+          >
+            Découvrir
+          </button>
+        </div>
+        {modalOpen && <Modal onClose={() => setModalOpen(false)} />}
       </div>
-      {modalOpen && <Modal onClose={() => setModalOpen(false)} />}
-    </div>
+    </section>
   );
 }
 

@@ -5,7 +5,16 @@
   text-align: center;
 }
 
-.accueil, .contact, .projets {
+h1{
+  margin: 0.2rem;
+}
+
+#Colored {
+  color: #3399ff;
+  margin-bottom: 2rem;
+}
+
+.Bloc-content {
   display: flex;
   flex-direction: column;
   padding: 2rem 1rem;
@@ -126,6 +135,16 @@ iframe {
 .carrousel-bloc button {
   font-size: 1.5rem;
   padding: 0.3em 0.7em;
+}
+
+.programName {
+  color: white;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+body.light-mode .programName {
+  color: black;
 }
 
 .accordion-title {
