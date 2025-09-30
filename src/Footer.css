@@ -57,10 +57,9 @@
   color: white;
 }
 
-img {
+.footer-title img{
     width: 30px;
     height: 30px;
-    margin-right: 1rem;
 }
 
 .footer-links {

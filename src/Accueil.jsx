@@ -24,7 +24,7 @@ function Accueil() {
           <h1>
             Bienvenue sur mon <span style={{ color: '#3399ff' }}>portfolio</span>
           </h1>
-          <p>Découvrez mes projets et compétences en développement web.</p>
+          <p>Découvrer mes projets et compétences en développement web.</p>
           <button
             className={animate ? "discover-btn animate" : "discover-btn"}
             onClick={() => {

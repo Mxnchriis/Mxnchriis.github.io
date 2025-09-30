@@ -39,6 +39,11 @@
     background: none;
     transition: background 0.2s;
 }
+
+body.light-mode .navbar button {
+    color: #000;
+}
+
 .navbar button:hover,
 .navbar button.active {
     background: rgba(75, 171, 255, 0.7);
@@ -125,7 +130,7 @@ body.light-mode .toggle-icon {
         font-size: 0.8em;
     }
     .navbar {
-        font-size: 0.95rem;
+        font-size: 0.75rem;
         flex-direction: row !important; /* Force horizontal */
         align-items: center;
         justify-content: center;
@@ -180,9 +185,9 @@ body.light-mode .toggle-icon {
         background-color: rgba(69, 94, 116, 0.658);
     }
 
-    .navbar img{
+    /* .navbar img{
         display: none;
-    }
+    } */
     
     .hamburger {
         display: flex;

@@ -15,6 +15,10 @@ import bashLogo from './assets/bash.png';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import selfie from './assets/img/selfie.jpg';
+import linkedinLogo from './assets/contact/linkedin.png'
+import githubLogo from './assets/contact/github.png'
+import emailLogo from './assets/contact/email.png'
+import mobileLogo from './assets/contact/mobile.png'
 
 const langImages = [
   { src: htmlLogo, alt: "HTML" },
@@ -126,9 +130,58 @@ function Carrousel() {
 
 
 
-function Accueil() {
+function ImageModal({ src, alt, open, onClose }) {
+  if (!open) return null;
+  return (
+    <div
+      className="modal-backdrop"
+      onClick={onClose}
+      style={{
+        position: "fixed",
+        top: 0, left: 0, right: 0, bottom: 0,
+        background: "rgba(0,0,0,0.7)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        zIndex: 1000
+      }}
+    >
+      <img
+        src={src}
+        alt={alt}
+        style={{
+          maxWidth: "90vw",
+          maxHeight: "90vh",
+          borderRadius: "10px",
+          boxShadow: "0 0 30px #000"
+        }}
+        onClick={e => e.stopPropagation()} // Pour ne pas fermer en cliquant sur la photo
+      />
+    </div>
+  );
+}
+
+function ImageWrapper({ src, alt }) {
   const [modalOpen, setModalOpen] = useState(false);
 
+  return (
+    <>
+      <div className="image-wrapper">
+        <div className="blur-background"></div>
+        <img
+          src={src}
+          alt={alt}
+          id='mainimg'
+          style={{ cursor: "pointer" }}
+          onClick={() => setModalOpen(true)}
+        />
+      </div>
+      <ImageModal src={src} alt={alt} open={modalOpen} onClose={() => setModalOpen(false)} />
+    </>
+  );
+}
+
+function Accueil() {
   return (
     <>
       <section id="apropos">
@@ -136,51 +189,61 @@ function Accueil() {
           <h1>
             Qui <span style={{color:'#3399ff'}}>suis-je</span> ?
           </h1>
-          <div className="image-wrapper">
-            <div className="blur-background"></div>
-            <img
-              src={selfie}
-              alt=""
-              id='mainimg'
-              style={{ cursor: "pointer" }}
-              onClick={() => setModalOpen(true)}
-            />
-          </div>
-
-          {/* Modal pour afficher la photo en grand */}
-          {modalOpen && (
-            <div
-              className="modal-backdrop"
-              onClick={() => setModalOpen(false)}
-              style={{
-                position: "fixed",
-                top: 0, left: 0, right: 0, bottom: 0,
-                background: "rgba(0,0,0,0.7)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                zIndex: 1000
-              }}
-            >
-              <img
-                src={selfie}
-                alt=""
-                style={{
-                  maxWidth: "90vw",
-                  maxHeight: "90vh",
-                  borderRadius: "10px",
-                  boxShadow: "0 0 30px #000"
-                }}
-                onClick={e => e.stopPropagation()} // Pour ne pas fermer en cliquant sur la photo
-              />
-            </div>
-          )}
-
           <p>
             Je suis AGOT Manchris, un jeune développeur de 21ans passionné par la création d'applications web modernes et interactives sur Montpellier.
             Mon parcours m'a permis d'acquérir des compétences solides en développement front-end et back-end, 
             ainsi qu'une compréhension approfondie des technologies web.
           </p>
+
+          <div className="grid-container">
+            <div className="box-content-column" >
+              <h2><span id='Colored2'>AGOT</span> Manchris</h2>
+              <h2>DÉVELOPPEUR <span className='fullstack' id='Colored2'>FULL-STACK</span></h2>
+              <h2><span id='Colored2'>20</span> ans</h2>
+              <h2>Le Crès 34920, <span id='Colored2'>France</span></h2>
+
+              <h3 id='info-utile'>Infos utiles</h3>
+              <div className="box-content-row">
+                <div className="box-content-column" id='box-styled'>
+                  <h3>Anglais</h3>
+                  <p>Niveau B2</p>
+                </div>
+                <div className="box-content-column" id='box-styled'>
+                  <h3>Espagnol</h3>
+                  <p>Niveau A2</p>
+                </div>
+                <div className="box-content-column" id='box-styled'>
+                  <h3>Permis B</h3>
+                  <p>Non-Véhiculé</p>
+                </div>
+              </div>
+            </div>
+            <div className="box-content-column">
+              <ImageWrapper src={selfie} alt="" />
+              <div className="box-content-column" id='links-container'>
+                  <a href="https://www.linkedin.com/in/manchris-a-144b79272/" style={{ textDecoration: 'none' }}>
+                    <div className="box-content-row" id='card-styled'>
+                      <img src={linkedinLogo} alt="LinkedIn Logo" className="linkedin-logo" /><h3>LinkedIn</h3>
+                    </div>
+                  </a>
+                  <a href="https://github.com/Mxnchriis" style={{ textDecoration: 'none' }}>
+                    <div className="box-content-row" id='card-styled'>
+                      <img src={githubLogo} alt="" /><h3>GitHub</h3>
+                    </div>
+                  </a>
+                  <a href="mailto:manchrisagot@gmail.com" style={{ textDecoration: 'none' }}>
+                    <div className="box-content-row" id='card-styled'>
+                      <img src={emailLogo} alt="" /><h3>E-mail</h3>
+                    </div>
+                  </a>
+                <a href="tel:+33743607709" style={{ textDecoration: 'none' }}>
+                  <div className="box-content-row" id='card-styled'>
+                    <img src={mobileLogo} alt="" /><h3>Téléphone</h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -211,15 +274,12 @@ function Accueil() {
       </section>
 
       <section id="parcours">
-        <div className="parcours">
+        <div className="Bloc-content">
           <h1>Mon <span id='Colored'>parcours</span></h1>
-            <p>J'ai commencer par un bac général assez atypique en Spécialité NSI, LLCER Anglais et SES. 
-              L'informatique et l'anglais ont toujours été au cœur de mon enfance que ce soit du karaoké sur des son pop US avec ma sœur ou les jeux vidéos. C'est surtout le fait de comprendre qui m'attire.
-              C'est pourquoi elle ont été les matières qui m'intéressait naturellement le plus. L'SES à plus été un choix stratégique car je voulais maitriser plusieurs axe du monde professionnel. 
-              J'ai ensuite continuer sur une Licence Science du Numérique qui englobe un peu tout les domaines et les langages de programmation principales de l'informatique car à cette époque je ne savais pas vraiment dans quel domaine informatique je voulais me spécialiser. 
-              Choix payant car cette licence m'a permis de découvrir plusieurs aspect du monde professionnel dans le numérique et pas que. 
-              Et me voilà aujourd'hui, en MBA développeur Full Stack, car durant ma licence j'ai pu me découvrir un vrai centre d'intérêt dans la création numérique (Programmation, Site web, UI/UX) car j'éprouve une satisfaction particulière à créer un programme, un site ou un jeu en partant de rien et d'obtenir un résultat fonctionnel.
-              J'aimerai donc poursuivre par la suite dans un métier de création numérique ou même idéalement à la tête d'une application populaire.</p>
+            <p>J'ai suivi un parcours académique atypique en choisissant un baccalauréat général avec les spécialités NSI, LLCER Anglais et SES.
+              L'informatique et l'anglais ont toujours occupé une place importante dans mon quotidien, que ce soit à travers les jeux vidéo ou l'univers musical anglophone. Ce qui me passionne avant tout, c'est la compréhension et la logique derrière les choses. Ces disciplines se sont donc imposées naturellement comme mes matières de prédilection. Le choix de la SES, quant à lui, relevait davantage d'une stratégie afin d'acquérir une vision plus large du monde professionnel.              J'ai ensuite poursuivi mes études avec une Licence Sciences du Numérique, formation pluridisciplinaire qui m'a permis d'explorer différents domaines et langages de programmation. Ce choix s'est révélé pertinent, car il m'a offert une vue d'ensemble sur les divers métiers du numérique et leurs réalités professionnelles.
+              Aujourd'hui, je poursuis mon parcours en MBA Développeur Full Stack. Au fil de ma licence, j'ai découvert un véritable intérêt pour la création numérique (programmation, développement web, UI/UX). Ce qui me motive particulièrement, c'est la satisfaction de partir d'une idée, de la concrétiser en un programme, un site ou même un jeu, et d'obtenir un résultat fonctionnel et abouti.
+              À terme, j'ambitionne de m'orienter vers un métier dans la création numérique, voire d'évoluer vers un projet entrepreneurial autour d'une application à forte valeur et popularité.</p>
         </div>
       </section>
     </>
