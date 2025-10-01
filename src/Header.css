@@ -23,6 +23,7 @@
     background-color: rgba(75, 171, 255, 0.416);
     border: 1px solid rgba(75, 171, 255, 0.416);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
 }
 
 .navbar nav {

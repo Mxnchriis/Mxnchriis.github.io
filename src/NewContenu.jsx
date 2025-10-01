@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Body.css'; 
+import pythonLogo from './assets/python.png';
 import htmlLogo from './assets/html.png';
 import cssLogo from './assets/css.png';
 import jsLogo from './assets/js.png';
@@ -19,8 +20,10 @@ import linkedinLogo from './assets/contact/linkedin.png'
 import githubLogo from './assets/contact/github.png'
 import emailLogo from './assets/contact/email.png'
 import mobileLogo from './assets/contact/mobile.png'
+import wwwLogo from './assets/www.png'
 
 const langImages = [
+  { src: pythonLogo, alt: "Python" },
   { src: htmlLogo, alt: "HTML" },
   { src: cssLogo, alt: "CSS" },
   { src: jsLogo, alt: "JavaScript" },
@@ -187,7 +190,7 @@ function Accueil() {
       <section id="apropos">
         <div className="Bloc-content">
           <h1>
-            Qui <span style={{color:'#3399ff'}}>suis-je</span> ?
+            Qui <span id='Colored'>suis-je</span> ?
           </h1>
           <p>
             Je suis AGOT Manchris, un jeune développeur de 21ans passionné par la création d'applications web modernes et interactives sur Montpellier.
@@ -196,52 +199,57 @@ function Accueil() {
           </p>
 
           <div className="grid-container">
-            <div className="box-content-column" >
+
+            <div className="box-content-column" id='info-perso' >
               <h2><span id='Colored2'>AGOT</span> Manchris</h2>
               <h2>DÉVELOPPEUR <span className='fullstack' id='Colored2'>FULL-STACK</span></h2>
               <h2><span id='Colored2'>20</span> ans</h2>
               <h2>Le Crès 34920, <span id='Colored2'>France</span></h2>
-
-              <h3 id='info-utile'>Infos utiles</h3>
-              <div className="box-content-row">
-                <div className="box-content-column" id='box-styled'>
-                  <h3>Anglais</h3>
-                  <p>Niveau B2</p>
-                </div>
-                <div className="box-content-column" id='box-styled'>
-                  <h3>Espagnol</h3>
-                  <p>Niveau A2</p>
-                </div>
-                <div className="box-content-column" id='box-styled'>
-                  <h3>Permis B</h3>
-                  <p>Non-Véhiculé</p>
-                </div>
-              </div>
             </div>
+
             <div className="box-content-column">
-              <ImageWrapper src={selfie} alt="" />
+              {/* <ImageWrapper src={selfie} alt="" /> */}
+
               <div className="box-content-column" id='links-container'>
-                  <a href="https://www.linkedin.com/in/manchris-a-144b79272/" style={{ textDecoration: 'none' }}>
-                    <div className="box-content-row" id='card-styled'>
-                      <img src={linkedinLogo} alt="LinkedIn Logo" className="linkedin-logo" /><h3>LinkedIn</h3>
-                    </div>
-                  </a>
-                  <a href="https://github.com/Mxnchriis" style={{ textDecoration: 'none' }}>
-                    <div className="box-content-row" id='card-styled'>
-                      <img src={githubLogo} alt="" /><h3>GitHub</h3>
-                    </div>
-                  </a>
-                  <a href="mailto:manchrisagot@gmail.com" style={{ textDecoration: 'none' }}>
-                    <div className="box-content-row" id='card-styled'>
-                      <img src={emailLogo} alt="" /><h3>E-mail</h3>
-                    </div>
-                  </a>
+                <a href="https://www.linkedin.com/in/manchris-a-144b79272/" style={{ textDecoration: 'none' }}>
+                  <div className="box-content-row" id='card-styled'>
+                    <img src={linkedinLogo} alt="LinkedIn Logo" className="linkedin-logo" /><h3>LinkedIn</h3>
+                  </div>
+                </a>
+                <a href="https://github.com/Mxnchriis" style={{ textDecoration: 'none' }}>
+                  <div className="box-content-row" id='card-styled'>
+                    <img src={githubLogo} alt="" /><h3>GitHub</h3>
+                  </div>
+                </a>
+                <a href="mailto:manchrisagot@gmail.com" style={{ textDecoration: 'none' }}>
+                  <div className="box-content-row" id='card-styled'>
+                    <img src={emailLogo} alt="" /><h3>E-mail</h3>
+                  </div>
+                </a>
                 <a href="tel:+33743607709" style={{ textDecoration: 'none' }}>
                   <div className="box-content-row" id='card-styled'>
                     <img src={mobileLogo} alt="" /><h3>Téléphone</h3>
                   </div>
                 </a>
               </div>
+
+            </div>
+
+          </div>
+
+          <h2 id='info-utile'>Infos utiles</h2>
+          <div className="box-content-row">
+            <div className="box-content-column" id='box-styled'>
+              <h3>Anglais</h3>
+              <p>Niveau B2</p>
+            </div>
+            <div className="box-content-column" id='box-styled'>
+              <h3>Espagnol</h3>
+              <p>Niveau A2</p>
+            </div>
+            <div className="box-content-column" id='box-styled'>
+              <h3>Permis B</h3>
+              <p>Non-Véhiculé</p>
             </div>
           </div>
         </div>
@@ -251,13 +259,40 @@ function Accueil() {
         <div className="Bloc-content">
           <h1>Mes</h1>
           <h1 id='Colored'>Compétences</h1>
-          <ul>
+            <div className="grid-container" id='skills-container'>
+              <div className="box-content-column" id='skill-box'>
+                <img src={wwwLogo} alt="Logo" />
+                <h2>Développement Web</h2>
+                <p>Création de sites web responsives et interactifs en utilisant HTML, CSS, JavaScript et des frameworks modernes comme React et Angular.</p>
+              </div>
+              <div className="box-content-column" id='skill-box'>
+                <img src={wwwLogo} alt="Logo" />
+                <h2>Création d'interfaces utilisateur réactives et intuitives</h2>
+                <p>Conception d'interfaces utilisateur modernes et intuitives en utilisant des frameworks comme React et Angular pour améliorer l'expérience utilisateur.</p>
+              </div>
+              <div className="box-content-column" id='skill-box'>
+                <img src={jsLogo} alt="Logo" />
+                <h2>Intégration d'API et gestion des données</h2>
+                <p>Intégration d'API tierces et gestion des données en utilisant des outils comme Axios et Fetch pour assurer une communication fluide entre le front-end et le back-end.</p>
+              </div>
+              <div className="box-content-column" id='skill-box'>
+                <img src={nodeLogo} alt="Logo" />
+                <h2>Conception de bases de données et développement back-end</h2>
+                <p>Conception et gestion de bases de données relationnelles et non relationnelles avec MySQL, ainsi que le développement de serveurs back-end avec Node.js</p>
+              </div>
+              <div className="box-content-column" id='skill-box'>
+                <img src={githubLogo} alt="Logo" />
+                <h2>Utilisation de Git pour le contrôle de version</h2>
+                <p>Maîtrise de Git pour le contrôle de version, la collaboration en équipe et la gestion efficace des projets de développement.</p>
+              </div>
+            </div>
+          {/* <ul>
             <li>Développement front-end avec des framework</li>
             <li>Création d'interfaces utilisateur réactives et intuitives</li>
             <li>Intégration d'API et gestion des données</li>
             <li>Conception de bases de données et développement back-end</li>
             <li>Utilisation de Git pour le contrôle de version</li>
-          </ul>
+          </ul> */}
         </div>
 
         <div className="Bloc-content">

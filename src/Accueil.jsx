@@ -22,7 +22,7 @@ function Accueil() {
         <div className="accueil-content">
           <img src={selfie} alt="" />
           <h1>
-            Bienvenue sur mon <span style={{ color: '#3399ff' }}>portfolio</span>
+            Bienvenue sur mon <span id='Colored'>portfolio</span>
           </h1>
           <p>Découvrer mes projets et compétences en développement web.</p>
           <button

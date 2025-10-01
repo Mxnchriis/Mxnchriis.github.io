@@ -87,6 +87,26 @@
   height: 50%;
 }
 
+#btn-footer{
+  background: none;
+  border: none;
+  color: rgba(75, 171, 255, 0.416);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#btn-footer:hover{
+  color: #3399ff;;
+}
+
+/* A corriger */
+#btn-footer:focus{
+  color: #3399ff;
+  font-weight: bold;
+  border: none;
+}
+
 .logo {
   width: 110px;
   padding: 0 1rem;
@@ -119,6 +139,20 @@
   .footer {
     flex-direction: column;
     padding: 0;
+    gap: 1rem;
+  }
+
+  .footer-content {
+    max-width: 80vw;
+    margin: 1rem auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .footer nav {
+    flex-wrap: wrap;
     gap: 1rem;
   }
   
