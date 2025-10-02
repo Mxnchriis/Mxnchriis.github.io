@@ -21,6 +21,10 @@ import githubLogo from './assets/contact/github.png'
 import emailLogo from './assets/contact/email.png'
 import mobileLogo from './assets/contact/mobile.png'
 import wwwLogo from './assets/www.png'
+import figmaLogo from './assets/figma.png'
+import programpooLogo from './assets/programpoo.png'
+import serveurLogo from './assets/img/serveur.png'
+import office365Logo from './assets/img/office365.png'
 
 const langImages = [
   { src: pythonLogo, alt: "Python" },
@@ -193,7 +197,7 @@ function Accueil() {
             Qui <span id='Colored'>suis-je</span> ?
           </h1>
           <p>
-            Je suis AGOT Manchris, un jeune développeur de 21ans passionné par la création d'applications web modernes et interactives sur Montpellier.
+            Je suis AGOT Manchris, un jeune développeur de 20ans passionné par la création d'applications web modernes et interactives sur Montpellier.
             Mon parcours m'a permis d'acquérir des compétences solides en développement front-end et back-end, 
             ainsi qu'une compréhension approfondie des technologies web.
           </p>
@@ -259,40 +263,119 @@ function Accueil() {
         <div className="Bloc-content">
           <h1>Mes</h1>
           <h1 id='Colored'>Compétences</h1>
+          <p>Voici un aperçu des compétences techniques que j'ai développées au fil de mon parcours.</p>
             <div className="grid-container" id='skills-container'>
               <div className="box-content-column" id='skill-box'>
                 <img src={wwwLogo} alt="Logo" />
                 <h2>Développement Web</h2>
-                <p>Création de sites web responsives et interactifs en utilisant HTML, CSS, JavaScript et des frameworks modernes comme React et Angular.</p>
+                <p>Création de sites web responsives et interactifs en utilisant HTML, CSS, JavaScript, des frameworks modernes comme React et Angular etc...</p>
+                <div className="box-content-row" id="skills-list">
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                  <li>PHP</li>
+                  <li>React</li>
+                  <li>Angular</li>
+                  <li>Vite</li>
+                  <li>Node.js</li>
+                  <li>Wordpress</li>
+                  <li>Odoo</li>
+                </div>
               </div>
               <div className="box-content-column" id='skill-box'>
-                <img src={wwwLogo} alt="Logo" />
-                <h2>Création d'interfaces utilisateur réactives et intuitives</h2>
-                <p>Conception d'interfaces utilisateur modernes et intuitives en utilisant des frameworks comme React et Angular pour améliorer l'expérience utilisateur.</p>
+                <img src={programpooLogo} alt="Logo" />
+                <h2>Progammation et POO</h2>
+                <p>Maîtrise des concepts de la programmation de base et de l'orientée objet (POO) pour structurer et organiser le code de manière efficace et réutilisable.</p>
+                <div className="box-content-row" id="skills-list">
+                  <li>Python</li>
+                  <li>Java</li>
+                  <li>C</li>
+                  <li>C++</li>
+                  <li>C#</li>
+                  <li>PHP</li>
+                  <li>Bash</li>
+                </div>
               </div>
-              <div className="box-content-column" id='skill-box'>
+              {/* <div className="box-content-column" id='skill-box'>
                 <img src={jsLogo} alt="Logo" />
                 <h2>Intégration d'API et gestion des données</h2>
                 <p>Intégration d'API tierces et gestion des données en utilisant des outils comme Axios et Fetch pour assurer une communication fluide entre le front-end et le back-end.</p>
-              </div>
+              </div> */}
               <div className="box-content-column" id='skill-box'>
-                <img src={nodeLogo} alt="Logo" />
-                <h2>Conception de bases de données et développement back-end</h2>
-                <p>Conception et gestion de bases de données relationnelles et non relationnelles avec MySQL, ainsi que le développement de serveurs back-end avec Node.js</p>
+                <img src={sqlLogo} alt="Logo" />
+                <h2>Conception de bases de données</h2>
+                <p>Conception et gestion de bases de données relationnelles et non relationnelles, ainsi que le développement de serveurs back-end.</p>
+                <div className="box-content-row" id="skills-list">
+                  <li>MySQL</li>
+                  <li>SQLite</li>
+                  <li>PHP</li>
+                  <li>Node.js</li>
+                  <li>Symfony</li>
+                  <li>Odoo.sh</li>
+                </div>
+              </div>
+              <div className="box-content-column" id="skill-box">
+                <img src={figmaLogo} alt="Logo" />
+                <h2>UI/UX Design</h2>
+                <p>Compétences en design d'interface utilisateur et en expérience utilisateur pour créer des designs attrayants et faciles à utiliser.</p>
+                <div className="box-content-row" id="skills-list">
+                  <li>Figma</li>
+                  <li>Canvas</li>
+                  <li>Photoshop</li>
+                  <li>Aseprite</li>
+                </div>
               </div>
               <div className="box-content-column" id='skill-box'>
                 <img src={githubLogo} alt="Logo" />
-                <h2>Utilisation de Git pour le contrôle de version</h2>
+                <h2>Contrôle de version</h2>
                 <p>Maîtrise de Git pour le contrôle de version, la collaboration en équipe et la gestion efficace des projets de développement.</p>
+                <div className="box-content-row" id="skills-list">
+                  <li>Git</li>
+                  <li>GitHub</li>
+                  <li>GitLab</li>
+                  <li>GitHub Desktop</li>
+                </div>
+              </div>
+              <div className="box-content-column" id="skill-box">
+                <img src={bashLogo} alt="Logo" />
+                <h2>Système d'exploitation</h2>
+                <p>Compétences en administration et utilisation des systèmes d'exploitation Linux et Windows, y compris la gestion des fichiers, des processus et des permissions.</p>
+                <div className="box-content-row" id="skills-list">
+                  <li>VirtualBox</li>
+                  <li>Linux (Ubuntu)</li>
+                  <li>Windows</li>
+                  <li>Cmd</li>
+                  <li>PowerShell</li>
+                  <li>SSH</li>
+                  <li>PuTTY</li>
+                </div>
+              </div>
+              <div className="box-content-column" id='skill-box'>
+                <img src={serveurLogo} alt="Logo" />
+                <h2>Réseaux et Sécurité</h2>
+                <p>Connaissances de base en réseaux informatiques, y compris les protocoles, la configuration et la sécurité des réseaux.</p>
+                <div className="box-content-row" id="skills-list">
+                  <li>Notions de base en réseaux</li>
+                  <li>Notions de base en cybersécurité</li>
+                  <li>Configuration de routeurs et switches</li>
+                  <li>Firewall</li>
+                  <li>VPN</li>
+                </div>
+              </div>
+              <div className="box-content-column" id='skill-box'>
+                <img src={office365Logo} alt="Logo" />
+                <h2>Office 365</h2>
+                <p>Maîtrise des outils de la suite Office 365, y compris Word, Excel, PowerPoint et Outlook pour la productivité et la collaboration.</p>
+                <div className="box-content-row" id="skills-list">
+                  <li>Word</li>
+                  <li>Excel</li>
+                  <li>PowerPoint</li>
+                  <li>Outlook</li>
+                  <li>OneNote</li>
+                  <li>Teams</li>
+                </div>
               </div>
             </div>
-          {/* <ul>
-            <li>Développement front-end avec des framework</li>
-            <li>Création d'interfaces utilisateur réactives et intuitives</li>
-            <li>Intégration d'API et gestion des données</li>
-            <li>Conception de bases de données et développement back-end</li>
-            <li>Utilisation de Git pour le contrôle de version</li>
-          </ul> */}
         </div>
 
         <div className="Bloc-content">
