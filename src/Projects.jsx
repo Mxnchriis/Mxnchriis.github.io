@@ -1,4 +1,4 @@
-import './Body.css'; 
+import './Projects.css'; 
 import React, { useState, useEffect } from 'react';
 import screengame2 from './assets/img/Screengame(2).png';
 import screengame3 from './assets/img/Screengame(3).png';

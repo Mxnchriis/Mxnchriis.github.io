@@ -73,7 +73,6 @@ body.light-mode .toggle-icon {
 .hamburger {
     display: none;
     cursor: pointer;
-    width: 40px;
     height: 40px;
     align-items: center;
     justify-content: center;
@@ -90,6 +89,10 @@ body.light-mode .toggle-icon {
     border-radius: 2px;
     position: relative;
     transition: all 0.3s;
+}
+
+body.light-mode .hamburger span, body.light-mode .hamburger span:before, body.light-mode .hamburger span:after {
+    background: #000;
 }
 
 .hamburger span:before,
@@ -183,7 +186,7 @@ body.light-mode .toggle-icon {
         font-size: 1rem;
         padding: 0.6rem 0;
         width: 100%;
-        background-color: rgba(69, 94, 116, 0.658);
+        background-color: rgba(255, 255, 255, 0.658);
     }
 
     /* .navbar img{
@@ -194,6 +197,6 @@ body.light-mode .toggle-icon {
         display: flex;
         position: fixed;
         top: 1rem;
-        right: 3rem;
+        right: 1rem;
     }
 }
