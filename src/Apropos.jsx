@@ -115,26 +115,26 @@ function Apropos() {
             <div className="box-content-row" id='card-display'>
                 <div className="card-product">
                 <img src={UKLogo} alt="United Kingdom" />
-                <div className="card-product-infos">
-                    <h3>Anglais</h3>
-                    <p>Niveau B2</p>
-                </div>
+                  <div className="card-product-infos">
+                      <h3>Anglais</h3>
+                      <p>Niveau B2</p>
+                  </div>
                 </div>
 
                 <div className="card-product">
                 <img src={SpainLogo} alt="Spain" />
-                <div className="card-product-infos">
-                    <h3>Espagnol</h3>
-                    <p>Niveau A2</p>
-                </div>
+                  <div className="card-product-infos">
+                      <h3>Espagnol</h3>
+                      <p>Niveau A2</p>
+                  </div>
                 </div>
 
                 <div className="card-product">
                 <img src={PermisBLogo} alt="Driver Licence" />
-                <div className="card-product-infos">
-                    <h3>Permis B</h3>
-                    <p>Non-Véhiculé</p>
-                </div>
+                  <div className="card-product-infos">
+                      <h3>Permis B</h3>
+                      <p>Non-Véhiculé</p>
+                  </div>
                 </div>
             </div>
             </div>

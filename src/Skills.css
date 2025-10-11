@@ -124,6 +124,103 @@ body.light-mode .programName {
   color: black;
 }
 
+.group-card-language{
+  display: flex;
+  flex-direction: row;
+  gap: 7rem;
+  padding-left: 100%;
+  animation: slide-forever 60s linear infinite;
+}
+
+@keyframes slide-forever{
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-450%);
+  }
+}
+
+.card-language{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-right: 1rem;
+  align-items: center;
+  border-radius: 6px;
+  width: fit-content;
+}
+
+.card-language img{
+  width: 75px;
+  height: 75px;
+  padding: 2rem;
+  object-fit: contain;
+  transition: filter 300ms;
+}
+.card-language img:hover {
+  filter: drop-shadow(0 0 2em #2f38dfaa);
+}
+
+.dev-app-box {
+  height: 600px;
+  margin: 2rem;
+  border-radius: 3px;
+  background-position: center;
+  background-size: cover;
+  align-items: flex-end;
+  /* filter: blur(0.5px); */
+}
+
+#vscode {
+  background-image: url("https://media.licdn.com/dms/image/v2/D4D12AQHT0EfN-GbTTw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1709732349047?e=2147483647&v=beta&t=GXFtgU8Sa-3HsEFuyLX-1jbyDFdhAgvz1Vh7l7LKPK8");
+}
+
+#git {
+  background-image: url('./assets/img/Github-img.png');
+}
+
+#figma{
+  background-image: url("https://framerusercontent.com/images/nAnYgtUdJOsiobcu2xDPPngHo.png?width=2400&height=1284");
+}
+
+#vm {
+  background-image: url("https://i.ytimg.com/vi/YNKPem3aDPA/maxresdefault.jpg");
+}
+
+#nocode {
+  background-image: url("https://www.intelivita.com/wp-content/uploads/2023/05/Top-No-Code-Website-Builders.png");
+}
+
+#ia {
+  background-image: url("https://cloud-cover.me/hubfs/microsoft%20copilot%20vs%20chatgpt%20openai.jpg");
+}
+
+#ue5 {
+  background-image: url("https://media.licdn.com/dms/image/v2/D5612AQHCt3fx8twdkg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1712556446716?e=2147483647&v=beta&t=NoT6WlgyB427x5_T1MdN7BvueSnezxmGjXSNG3EtqQM");
+}
+
+#office {
+  background-image: url("https://www.silviodibenedetto.com/wp-content/uploads/2020/07/hero_o365_v2.jpg");
+}
+
+.dev-app-content {
+  position: relative;
+  top: 70%;
+  padding: 1.5rem;
+  background-color: #192a316f;
+}
+
+#h3dev{
+  color: white;
+}
+
+.dev-app-content p {
+  color: rgb(255, 255, 255);
+}
+
+
+
 @media (max-width: 600px) {
     
     #skills-container {
@@ -171,5 +268,41 @@ body.light-mode .programName {
     .carrousel-bloc button {
         font-size: 0.5rem;
         padding: 0.2em 0.5em;
+    }
+
+    .group-card-language{
+      gap: 3rem;
+      animation: slide-forever 35s linear infinite;
+    }
+
+    .card-language {
+      margin-top: 3rem;
+    }
+
+    .card-language img{
+      width: 45px;
+      height: 45px;
+      padding: 1rem;
+    }
+
+    .dev-app-box {
+      width: 70vw;
+      height: 35vw;
+      justify-content: center;
+      margin: 2rem auto;
+    }
+
+    .dev-app-content{
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @keyframes slide-forever{
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-900%);
+      }
     }
 }

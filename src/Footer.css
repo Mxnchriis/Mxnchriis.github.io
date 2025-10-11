@@ -60,6 +60,8 @@
 .footer-title img{
     width: 30px;
     height: 30px;
+    object-fit: contain;
+    margin-left: -0.5rem;
 }
 
 .footer-links {

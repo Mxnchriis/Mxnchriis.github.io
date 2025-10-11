@@ -24,11 +24,6 @@ body.light-mode #Colored {
 }
 
 #Colored2 {
-  color: #173651;
-  /* color: #ffbcbc; */
-}
-
-body.light-mode #Colored2 {
   color: rgb(34, 103, 152);  
 }
 

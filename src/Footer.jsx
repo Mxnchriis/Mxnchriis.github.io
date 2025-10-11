@@ -6,7 +6,7 @@ import githubLogo from './assets/contact/github.png'
 import adresseLogo from './assets/contact/adresse.png'
 import mobileLogo from './assets/contact/mobile.png'
 import emailLogo from './assets/contact/email.png'
-import programmingLogo from './assets/img/programmation.png'
+import MadaLogo from './assets/img/Mq.svg'
 import './Footer.css'
 import { Link } from 'react-router-dom';
 
@@ -25,7 +25,7 @@ function Footer() {
       <div className="footer">
         <div className="footer-content">
           <div className="footer-title">
-            <img src={programmingLogo} alt="GitHub Logo" className="github-logo" />
+            <img src={MadaLogo} alt="GitHub Logo" className="github-logo" />
             <h1>AGOT Manchris</h1>
             <h2>Développeur Full-Stack en recherche d'alternance</h2>
           </div>
