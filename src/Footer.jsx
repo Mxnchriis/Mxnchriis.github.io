@@ -33,10 +33,10 @@ function Footer() {
           <nav>
               <button onClick={() => scrollToSection("accueil") } id='btn-footer'>Accueil</button>
               <button onClick={() => scrollToSection("apropos")} id='btn-footer' >À propos</button>
-              <button onClick={() => scrollToSection("skills")} id='btn-footer' >Skills</button>
               <button onClick={() => scrollToSection("parcours")} id='btn-footer' >Parcours</button>
+              <button onClick={() => scrollToSection("skills")} id='btn-footer' >Skills</button>
               <button onClick={() => scrollToSection("projets")} id='btn-footer' >Projets</button>
-              <button onClick={() => scrollToSection("contact")} id='btn-footer' >Contact</button>
+              {/* <button onClick={() => scrollToSection("contact")} id='btn-footer' >Contact</button> */}
           </nav>
 
           <div className="adresse">

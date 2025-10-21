@@ -54,10 +54,10 @@ function Header() {
           <nav>
             <button onClick={() => scrollToSection("accueil")}>Accueil</button>
             <button onClick={() => scrollToSection("apropos")}>À propos</button>
-            <button onClick={() => scrollToSection("skills")}>Skills</button>
             <button onClick={() => scrollToSection("parcours")}>Parcours</button>
+            <button onClick={() => scrollToSection("skills")}>Skills</button>
             <button onClick={() => scrollToSection("projets")}>Projets</button>
-            <button onClick={() => scrollToSection("contact")}>Contact</button>
+            {/* <button onClick={() => scrollToSection("contact")}>Contact</button> */}
           </nav>
         </div>
       </div>

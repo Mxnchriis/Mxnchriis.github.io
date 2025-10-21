@@ -256,7 +256,7 @@ function Skills(){
             </div>
 
             <div className="Bloc-content">
-              <h2>Mes langages de <span id='Colored'>Programmation</span></h2>
+              <h2>Mes langages de <span id='Colored2'>programmation</span></h2>
               <ul>
                   <li>Python, HTML, CSS, JavaScript, Java</li>
                   <li>Frameworks : React, Node.js, Angular</li>
@@ -346,9 +346,9 @@ function Skills(){
               </div>
             </div>
 
-            <div className="Bloc-content">
-              <h2>Mes outils de développement</h2>
-              <ul>
+            <div className="Bloc-content" id='outils'>
+              <h2>Mes <span id='Colored2'>outils</span> de développement</h2>
+              {/* <ul>
                   <li>Visual Studio Code</li>
                   <li>Git, GitHub</li>
                   <li>Figma, Canvas</li>
@@ -357,62 +357,72 @@ function Skills(){
                   <li>Office 365 (Word, Excel, PowerPoint, ect...)</li>
                   <li>ChatGPT, Copilot</li>
                   <li>Unreal Engine 5, Unity</li>
-              </ul>
+              </ul> */}
 
-              <div className="dev-app-box" id='vscode'>
-                <div className="dev-app-content">
-                  <h3 id='h3dev'>Visual Studio Code</h3>
-                  <p>Mon application principale de dev</p>
+              <div className="grid-app" id='gridapp1'>
+                <div className="dev-app-box" id='vscode'>
+                  <div className="dev-app-content">
+                    <h3 id='h3dev'>Visual Studio Code</h3>
+                    <p>Mon application principale de dev</p>
+                  </div>
+                </div>
+
+                <div className="dev-app-box" id='git'>
+                  <div className="dev-app-content">
+                    <h3 id='h3dev'>Git/Github</h3>
+                    <p>Mes outils de versionning</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="dev-app-box" id='git'>
-                <div className="dev-app-content">
-                  <h3 id='h3dev'>Git/Github</h3>
-                  <p>Mes outils de versionning</p>
+
+              <div className="grid-app" id='gridapp2'> 
+                <div className="dev-app-box" id='ia'>
+                  <div className="dev-app-content">
+                    <h3 id='h3dev'>ChatGPT, Copilot</h3>
+                    <p>Intelligence Artificielle m'aidant au quotidient</p>
+                  </div>
+                </div>
+
+
+                <div className="dev-app-box" id='vm'>
+                  <div className="dev-app-content">
+                    <h3 id='h3dev'>VirtualBox, PuTTY</h3>
+                    <p>Système d'exploitation Linux et SSH</p>
+                  </div>
+                </div>
+
+                <div className="dev-app-box" id='ue5'>
+                  <div className="dev-app-content">
+                    <h3 id='h3dev'>Unreal Engine 5, Unity</h3>
+                    <p>Mes outils de création de jeux-vidéos</p>
+                  </div>
                 </div>
               </div>
 
-              <div className="dev-app-box" id='figma'>
-                <div className="dev-app-content">
-                  <h3 id='h3dev'>Figma, Canvas</h3>
-                  <p>Mes applis de designs</p>
+              <div className="grid-app" id='gridapp3'>
+                <div className="dev-app-box" id='nocode'>
+                  <div className="dev-app-content">
+                    <h3 id='h3dev'>Wordpress, Odoo</h3>
+                    <p>Mes outils de No-code </p>
+                  </div>
                 </div>
-              </div>
 
-              <div className="dev-app-box" id='vm'>
-                <div className="dev-app-content">
-                  <h3 id='h3dev'>VirtualBox, PuTTY</h3>
-                  <p>Système d'exploitation Linux et SSH</p>
+                <div className="dev-app-box" id='figma'>
+                  <div className="dev-app-content">
+                    <h3 id='h3dev'>Figma, Canvas</h3>
+                    <p>Mes applis de designs</p>
+                  </div>
                 </div>
-              </div>
+                
+                <div className="dev-app-box" id='office'>
+                  <div className="dev-app-content">
+                    <h3 id='h3dev'>Office 365 (Word, Excel, PowerPoint, ect...)</h3>
+                    <p>Prise de Notes et Présentation</p>
+                  </div>
+                </div>
 
-              <div className="dev-app-box" id='nocode'>
-                <div className="dev-app-content">
-                  <h3 id='h3dev'>Wordpress, Odoo</h3>
-                  <p>Mes outils de No-code </p>
-                </div>
-              </div>
 
-              <div className="dev-app-box" id='office'>
-                <div className="dev-app-content">
-                  <h3 id='h3dev'>Office 365 (Word, Excel, PowerPoint, ect...)</h3>
-                  <p>Prise de Notes et Présentation</p>
-                </div>
-              </div>
-
-              <div className="dev-app-box" id='ia'>
-                <div className="dev-app-content">
-                  <h3 id='h3dev'>ChatGPT, Copilot</h3>
-                  <p>Intelligence Artificielle m'aidant au quotidient</p>
-                </div>
-              </div>
-
-              <div className="dev-app-box" id='ue5'>
-                <div className="dev-app-content">
-                  <h3 id='h3dev'>Unreal Engine 5, Unity</h3>
-                  <p>Mes outils de création de jeux-vidéos</p>
-                </div>
               </div>
             </div>
         </section>

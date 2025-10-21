@@ -202,11 +202,10 @@ function Projets() {
   return (
     <section id="projets">
       <div className="Bloc-content">
-        <h1>Mes</h1>
-        <h1 id='Colored'>Projets</h1>
-        <div className="image-wrapper">
+        <h1>Mes <span id='Colored'>Projets</span></h1>
+        {/* <div className="image-wrapper">
         <img src="https://www.univ-smb.fr/espace-etudiant/wp-content/uploads/sites/81/2022/09/projet-etudiant.jpg" alt="" className='mainimg'/>
-        </div>
+        </div> */}
         <p>Quelques-uns de mes projets récents :</p>
         <ul>
           <Accordion title="Projet React 1">

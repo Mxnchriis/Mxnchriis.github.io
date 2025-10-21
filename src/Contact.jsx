@@ -4,11 +4,10 @@ function Contact() {
     return (
         <section id="contact">
             <div className="Bloc-content">
-                <h1>Me</h1>
-                <h1 id='Colored'>Contacter</h1>
-                <div className="image-wrapper">
+                <h1>Où me <span id='Colored'>Contacter</span> ?</h1>
+                {/* <div className="image-wrapper">
                     <img src="https://www.univ-smb.fr/scem/wp-content/uploads/sites/82/2022/03/contact-750x300.jpg" alt="" className='mainimg'/>
-                </div>
+                </div> */}
                 <p>Nom/prénom: AGOT Manchris</p>
                 <p>Âge: 20 ans</p>
                 <p>Cursus: MBA Développeur Full Stack</p>

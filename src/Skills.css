@@ -162,14 +162,38 @@ body.light-mode .programName {
   filter: drop-shadow(0 0 2em #2f38dfaa);
 }
 
+  #outils {
+    padding-top: 0;
+  }
+
+.grid-app {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0.2rem;
+}
+
+#gridapp1 {
+  grid-template-columns: 2fr 1fr;
+}
+
+#gridapp2 {
+  grid-template-columns: 1fr 1fr 2fr;
+}
+
 .dev-app-box {
-  height: 600px;
-  margin: 2rem;
-  border-radius: 3px;
+  /* height: 600px; */
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 5px;
   background-position: center;
   background-size: cover;
   align-items: flex-end;
   /* filter: blur(0.5px); */
+}
+
+.dev-app-box:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s;
 }
 
 #vscode {
@@ -206,9 +230,12 @@ body.light-mode .programName {
 
 .dev-app-content {
   position: relative;
-  top: 70%;
-  padding: 1.5rem;
-  background-color: #192a316f;
+  top: 50%;
+  /* border: 1px solid #cccccc63; */
+  border-radius: 2px;
+  transform: translateY(-50%);
+  padding: 2rem;
+  background-color: #0e181d6f;
 }
 
 #h3dev{
@@ -283,6 +310,14 @@ body.light-mode .programName {
       width: 45px;
       height: 45px;
       padding: 1rem;
+    }
+
+    #gridapp1 {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    #gridapp2 {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
 
     .dev-app-box {

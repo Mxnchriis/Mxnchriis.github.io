@@ -24,10 +24,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Header />
       <Accueil />
       <Apropos/>
-      <Skills/>
       <Cursus/>
+      <Skills/>
       <Projets />
-      <Contact />
+      {/* <Contact /> */}
       <Footer/>
     </BrowserRouter>
   </StrictMode>,
