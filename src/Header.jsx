@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
-import selfie2 from './assets/img/Selfie2.jpeg';
 import lune from './assets/img/lune.png';
-import soleil from './assets/img/soleil.png'; // Ajoute une icône soleil dans ton dossier assets
-// import { Link } from 'react-router-dom';
+import soleil from './assets/img/soleil.png';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,11 +28,7 @@ function Header() {
   return (
     <header>
       <div className="header">
-        {/* <div className="header-title">
-          <h1>AGOT Manchris - Portfolio</h1>
-          <h2>Bienvenue sur le Portfolio comprennant les projets de Mr.AGOT Manchris</h2>
-        </div> */}
-              {/* Hamburger pour mobile */}
+        {/* Hamburger pour mobile */}
         <button
         className="hamburger"
         aria-label="Menu"

@@ -45,6 +45,16 @@
 
 .discover-btn:hover {
   background: #3399ff;
+  transition: 0.5s;
+}
+
+body.light-mode .discover-btn {
+  background: var(--couleur);
+  color: black;
+}
+
+body.light-mode .discover-btn:hover {
+  background: var(--couleur-tertiaire);
 }
 
 .discover-btn.animate {

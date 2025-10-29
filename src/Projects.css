@@ -7,8 +7,7 @@
 }
 
 body.light-mode .accordion button {
-  background: var(--couleur-secondaire);
-  color: white;
+  background: var(--couleur);
 }
 
 .accordion button:hover {
@@ -184,6 +183,80 @@ body.light-mode .contenu {
   color: #888;
 }
 
+#website {
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.website-box {
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  height: 400px;
+  margin: 1rem;
+  font-size: small;
+  text-align: left;;
+  border-radius: 10px;
+  background-color: #173651;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.607);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+body.light-mode .website-box {
+  background-color: rgba(75, 171, 255, 0.416);
+  box-shadow: 0 0 10px rgba(32, 32, 32, 0.607);
+}
+
+.website-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+}
+
+.website-box h3 {
+  color: #222;
+}
+
+.website-box img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 10px 10px 0 0;
+}
+
+#ICEAwebsite {
+  background-image: url(assets/img/SiteWeb1.png);
+}
+
+#NASDYwebsite {
+  background-image: url(assets/img/SiteWeb2.png);
+}
+
+#Akayawebsite {
+  background-image: url(assets/img/SiteWeb3.png);
+}
+
+.website-content {
+  padding: 0.5rem 2rem;
+  border-radius: 0 0 10px 10px;
+  height: 200px;
+}
+
+#weblink {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  left: 88%;
+  border-radius: 0;
+  padding-bottom: 0.5rem;
+}
+
+#weblink:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s;
+  /* box-shadow: #0000ff 0 0 10px; */
+}
+
 @media (max-width: 600px) {
     .accordion-content {
         padding: 8px 5px;
@@ -216,6 +289,16 @@ body.light-mode .contenu {
         flex-direction: column;
         justify-content: center;
         gap: 1rem;
+    }
+
+    #website {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .website-box {
+        width: 75vw;
+        height: auto;
     }
 }
 

@@ -1,6 +1,7 @@
 :root {
-  --couleur: #3399ff;
+  --couleur: rgba(75, 171, 255, 0.416);
   --couleur-secondaire: #173651;
+  --couleur-tertiaire: #0056b3;
 }
 
 #root {

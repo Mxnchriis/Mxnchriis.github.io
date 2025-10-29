@@ -1,6 +1,3 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import linkedinLogo from './assets/contact/linkedin.png'
 import githubLogo from './assets/contact/github.png'
 import adresseLogo from './assets/contact/adresse.png'
@@ -8,10 +5,8 @@ import mobileLogo from './assets/contact/mobile.png'
 import emailLogo from './assets/contact/email.png'
 import MadaLogo from './assets/img/Mq.svg'
 import './Footer.css'
-import { Link } from 'react-router-dom';
 
 function Footer() {
-  const [count, setCount] = useState(0)
 
   function scrollToSection(id) {
     const section = document.getElementById(id);
@@ -51,19 +46,8 @@ function Footer() {
           <a href="tel:+33743607709"><img src={mobileLogo} alt="" /></a>
           </div>
 
-          {/* <div className='footer-origin'>
-            <div className="footlink">
-            <a href="https://vite.dev" target="_blank">
-            <img src={viteLogo} className="logo" alt="Vite logo" />
-            </a>
-            <a href="https://react.dev" target="_blank">
-            <img src={reactLogo} className="logo react" alt="React logo" />
-            </a>
-            </div>
-            <h2>Ce portfolio tourne sur Vite + React</h2>
-            </div> */}
-            <h4>© 2025 AGOT Manchris. Tous droits réservés.</h4>
-          </div>
+          <h4>© 2025 AGOT Manchris. Tous droits réservés.</h4>
+        </div>
       </div>
     </>
   )

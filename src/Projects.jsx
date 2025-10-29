@@ -2,6 +2,10 @@ import './Projects.css';
 import React, { useState, useEffect } from 'react';
 import screengame2 from './assets/img/Screengame(2).png';
 import screengame3 from './assets/img/Screengame(3).png';
+import siteweb1 from './assets/img/siteweb1.png';
+import siteweb2 from './assets/img/siteweb2.png';
+import siteweb3 from './assets/img/siteweb3.png';
+import lien from './assets/img/lien-externe.png';
 
 
 function Accordion({ title, children }) {
@@ -206,7 +210,7 @@ function Projets() {
         {/* <div className="image-wrapper">
         <img src="https://www.univ-smb.fr/espace-etudiant/wp-content/uploads/sites/81/2022/09/projet-etudiant.jpg" alt="" className='mainimg'/>
         </div> */}
-        <p>Quelques-uns de mes projets récents :</p>
+        <p>Quelques mini-projets que j'ai pu réaliser :</p>
         <ul>
           <Accordion title="Projet React 1">
             <h2>Test de Mots par Minute (MPM)</h2>
@@ -219,10 +223,9 @@ function Projets() {
             <p>Un sélecteur de couleur simple qui permet à l'utilisateur de choisir une couleur, l'afficher puis la copier dans son presse-papier.</p>
           </Accordion>
           
-          <Accordion title="Projet Angular">
-            {/* <li>En cours...</li> */}
+          {/* <Accordion title="Projet Angular">
             <Placeholder />
-          </Accordion>
+          </Accordion> */}
 
           <Accordion title="Projet UI/UX">
             <h2>Gaspiypa</h2>
@@ -247,9 +250,36 @@ function Projets() {
           </Accordion>
 
           <p>Voici également quelques sites web sur lesquel j'ai pu travaillé :</p>
-          <li><a href="http://icea-edu.fr">icea-edu.fr</a></li>
-          <li><a href="https://www.nasdy.fr/">nasdy.fr</a></li>
-          <li><a href="https://akaya.odoo.com/">akaya.odoo.com</a></li>
+
+          <div className='grid-container' id='website'>
+            <div className="website-box">
+              <img src={siteweb1} alt="" />
+              <div className="website-content">
+                <h3>ICEA - Institut Catholique Européennes des Amériques</h3>
+                <p>Site web institutionnel pour une école supérieure, présentant les programmes, les admissions et les actualités de l'institut.</p>
+              </div>
+              <a href="http://icea-edu.fr" target='_blank'><img src={lien} alt="" id='weblink' /></a>
+            </div>
+
+            <div className="website-box">
+              <img src={siteweb2} alt="" />
+              <div className="website-content">
+                <h3>Nasdy - Agence de communication digitale</h3>
+                <p>Site vitrine pour une agence de communication digitale, mettant en avant leurs services, leur portfolio et les témoignages clients.</p>
+              </div>
+                <a href="https://www.nasdy.fr/" target='_blank'><img src={lien} alt="" id='weblink' /></a>
+            </div>
+
+            <div className="website-box">
+              <img src={siteweb3} alt="" />
+              <div className="website-content">
+                <h3>Akaya - Boutique en ligne de produits écoresponsables</h3>
+                <p>Site e-commerce pour une boutique spécialisée dans les produits écoresponsables, avec un catalogue de produits, un système de paiement sécurisé et une interface utilisateur conviviale.</p>
+              </div>
+                <a href="https://akaya.odoo.com/" target='_blank'><img src={lien} alt="" id='weblink' /></a>
+            </div>
+
+          </div>
         </ul>
       </div>
     </section>

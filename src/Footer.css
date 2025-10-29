@@ -102,11 +102,18 @@
   color: #3399ff;;
 }
 
-/* A corriger */
 #btn-footer:focus{
   color: #3399ff;
   font-weight: bold;
   border: none;
+}
+
+body.light-mode #btn-footer{
+  color: var(--couleur-tertiaire);
+}
+
+body.light-mode #btn-footer:hover{
+  color: var(--couleur);
 }
 
 .logo {
