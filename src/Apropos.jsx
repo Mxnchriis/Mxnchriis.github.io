@@ -66,7 +66,7 @@ function Apropos() {
                 Qui <span id='Colored'>suis-je</span> ?
             </h1>
             <p>
-                Je suis AGOT Manchris, un jeune développeur de 20ans passionné par la création d'applications web modernes et interactives sur Montpellier.
+                Je suis AGOT Manchris, un jeune développeur de 21ans passionné par la création d'applications web modernes et interactives sur Montpellier.
                 Mon parcours m'a permis d'acquérir des compétences solides en développement front-end et back-end, 
                 ainsi qu'une compréhension approfondie des technologies web.
             </p>
@@ -76,7 +76,7 @@ function Apropos() {
                 <div className="box-content-column" id='info-perso' >
                 <h2><span id='Colored2'>AGOT</span> Manchris</h2>
                 <h2>DÉVELOPPEUR <span className='fullstack' id='Colored2'>FULL-STACK</span></h2>
-                <h2><span id='Colored2'>20</span> ans</h2>
+                <h2><span id='Colored2'>21</span> ans</h2>
                 <h2>Le Crès 34920, <span id='Colored2'>France</span></h2>
                 </div>
 
